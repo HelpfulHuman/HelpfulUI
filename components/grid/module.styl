@@ -1,0 +1,41 @@
+/**
+ * This grid is based on Bootstrap's grid system.  You'll notice that
+ * the columns are not considered a "part".  This is because they can
+ * technically be treated as a standalone component and even have their
+ * own modifiers/options (aka, the sizes).
+ */
+
+@import 'mixins'
+
+.grid
+  margin-left em(-1 * $grid__gutter)
+  margin-right em(-1 * $grid__gutter)
+
+  &:before,
+  &:after
+    content " "
+    display table
+
+  &:after
+    clear both
+
+.col
+  float left
+  display block
+  padding-left em($grid__gutter)
+  padding-right em($grid__gutter)
+  width 100%
+
+  gridColumnClasses('\-xs')
+
+  @media (min-width: $global__media-sm)
+    gridColumnClasses('\-sm')
+
+  @media (min-width: $global__media-md)
+    gridColumnClasses('\-md')
+
+  @media (min-width: $global__media-lg)
+    gridColumnClasses('\-lg')
+
+  @media (min-width: $global__media-xl)
+    gridColumnClasses('\-xl')

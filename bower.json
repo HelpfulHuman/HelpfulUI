@@ -1,10 +1,11 @@
 {
   "name": "helpful-ui",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha",
   "authors": [
     "Nick Glenn <nick@helpfulhuman.com>"
   ],
-  "description": "A modular UI framework built using Stylus and Gulp.",
+  "main": "main.css",
+  "description": "Opinionated file structure for web styles using Stylus and Gulp.",
   "keywords": [
     "ui",
     "stylus",
