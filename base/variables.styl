@@ -1,0 +1,77 @@
+/**
+ * This file contains default variables that you can override. It
+ * also acts as a dictionary for what variables are available.
+ */
+
+/**
+ * GLOBAL BASE SIZE
+ *
+ * This is the default sizes that other sizes will by divided by
+ * to find the correct EM.
+ */
+$global__size ?= 16px
+
+
+/**
+ * MEDIA QUERY SIZES
+ *
+ * The media query breakpoints
+ */
+$global__media-xs ?= (320px / $global__size) + 0em
+$global__media-sm ?= (480px / $global__size) + 0em
+$global__media-md ?= (768px / $global__size) + 0em
+$global__media-lg ?= (1024px / $global__size) + 0em
+$global__media-xl ?= (1146px / $global__size) + 0em
+
+
+/**
+ * CONTEXT COLORS
+ *
+ * TODO Define proper color codes based on branding guide
+ */
+$global__color-primary    ?= #337ab7
+$global__color-secondary  ?= #888888
+$global__color-danger     ?= #d9534f
+$global__color-muted      ?= #eeeeee
+$global__color-success    ?= #5cb85c
+$global__color-info       ?= #5bc0de
+$global__color-warning    ?= #f0ad4e
+
+
+/**
+ * GRID
+ *
+ * Variables for the grid system.
+ */
+$grid__columns      ?= 12
+$grid__gutter       ?= 32px
+
+
+/**
+ * CONTROLS
+ *
+ * These refer to primary form control elements, namely text inputs
+ * and buttons.
+ */
+$control__height          ?= 50px
+$control__border-radius   ?= 2px
+
+
+/**
+ * INPUTS
+ *
+ * Variables related to textual inputs like "text", "email",
+ * "tel", "password", etc...
+ */
+$input__height      ?= $control__height
+
+
+/**
+ * BUTTONS
+ *
+ * Variables related to the button component.
+ */
+$button__font-style     ?= $control__font-style
+$button__font-weight    ?= $control__font-weight
+$button__height         ?= $control__height
+$button__border-radius  ?= $control__border-radius

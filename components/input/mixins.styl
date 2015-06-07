@@ -1,0 +1,16 @@
+/**
+ * Used to define browser-friendly placeholder size and color rules.
+ */
+placeholder($size, $color)
+  &::-webkit-input-placeholder
+    font-size $size
+    color $color
+  &:-moz-placeholder
+    font-size $size
+    color $color
+  &::-moz-placeholder
+    font-size $size
+    color $color
+  &:-ms-input-placeholder
+    font-size $size
+    color $color
