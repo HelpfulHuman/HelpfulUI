@@ -7,14 +7,9 @@
  *   <div style="float:left;"></div>
  * </div>
  */
+.\\+cf,
 .\\+clear
-  &:before,
-  &:after
-    content " "
-    display table
-
-  &:after
-    clear both
+  clearfix()
 
 /**
  * Clears proceeding left floating elements.
