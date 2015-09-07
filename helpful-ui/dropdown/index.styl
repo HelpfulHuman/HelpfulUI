@@ -13,7 +13,10 @@
   cursor pointer
   vertical-align middle
   if $dropdown__border-radius
-    border-radius($dropdown__border-radius)
+    border-radius $dropdown__border-radius
+  if $dropdown__shadow and $dropdown__shadow isnt none
+    box-shadow $dropdown__shadow
+
 
   &:hover,
   &:focus
