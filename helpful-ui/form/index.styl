@@ -1,0 +1,31 @@
+@require 'options'
+@require '../helpers/placeholder'
+@require '../helpers/units'
+
+input,
+textarea
+  display block
+  padding-left 1em
+  padding-right @padding-left
+  width 100%
+  border solid $form__border-width $form__border-color
+  background $form__background
+  color $form__color
+  border-radius $form__border-radius
+  placeholder $form__border-color
+  if $form__shadow and $form__shadow isnt none
+    box-shadow $form__shadow
+
+  &:hover,
+  &:focus
+    background darken($form__background, 2%)
+
+input
+  vertical-align middle
+  height em($form__height)
+  line-height $form__height
+
+textarea
+  padding-top 0.5em
+  padding-bottom @padding-top
+  line-height inherit
