@@ -1,0 +1,51 @@
+@import 'options'
+
+.dropdown
+  position relative
+  display block
+  width 100%
+  height em($dropdown__height, $dropdown__font-size)
+  line-height($dropdown__height, $dropdown__font-size)
+  font-size $dropdown__font-size
+  color $dropdown__color
+  background $dropdown__background
+  border solid $dropdown__border-width $dropdown__border-color
+  cursor pointer
+  vertical-align middle
+  if $dropdown__border-radius
+    border-radius($dropdown__border-radius)
+
+  &:hover,
+  &:focus
+    background darken($dropdown__background, 6%)
+
+  &:before
+    display block
+    position absolute
+    top 50%
+    right 1em
+    margin -0.5em 0
+    height inherit
+    line-height inherit
+    border-top solid 1em $dropdown__color
+    border-left solid 1em transparent
+    border-right @border-left
+    border-bottom 0
+    z-index 1
+
+  select
+    display block
+    position relative
+    margin 0
+    padding-left 1em
+    padding-right @padding-left
+    font inherit
+    line-height inherit
+    color inherit
+    background transparent
+    border 0
+    width 110%
+    height 100%
+    appearance none
+    cursor pointer
+    z-index 2
