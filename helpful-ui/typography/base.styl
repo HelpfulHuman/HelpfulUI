@@ -1,0 +1,69 @@
+@require '../theme'
+
+a
+  margin 0
+  padding 0
+  font-size 100%
+  vertical-align baseline
+  background transparent
+  color $theme__link-text-color
+  text-decoration none
+  cursor pointer
+
+del
+  text-decoration line-through
+
+abbr[title], dfn[title]
+  border-bottom dotted 1px #000
+  cursor help
+
+hr
+  display block
+  margin 1em 0
+  padding 0
+  height $theme__rule-width
+  border 0
+  background $theme__rule-color
+
+p, ul, ol
+  margin 1em auto
+
+pre
+  white-space pre
+  white-space pre-wrap
+  white-space pre-line
+  word-wrap break-word
+
+small
+  font-size 85%
+
+strong
+  font-weight bold
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup
+  position relative
+  font-size 75%
+  line-height 0
+
+sup
+  top -0.5em
+
+sub
+  bottom -0.5em
+
+::selection
+  color $theme__selection-color
+  background $theme__selection-background
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp
+  font-family $theme__font-monospaced
+
+blockquote, q
+  quotes none
+
+  &:before,
+  &:after
+    content ''
+    content none
