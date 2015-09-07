@@ -12,6 +12,8 @@ HTML5 Boilerplate         -> http://html5boilerplate.com
 
 */
 
+@require '../theme'
+
 reset()
 
 if $global__enforce-height
@@ -26,17 +28,6 @@ html
   box-sizing border-box
   if $global__enforce-scroll-bar
     overflow-y scroll
-
-body
-  background $global__background
-  color $global__body-text-color
-  font-family $global__font-paragraph
-  font-size-rem($global__size)
-  font-weight $global__font-weight
-  font-style normal
-  line-height($global__line-height)
-
-
 
 nav
   ol, ul
