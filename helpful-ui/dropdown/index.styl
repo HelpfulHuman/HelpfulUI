@@ -1,3 +1,4 @@
+@require '../helpers/text-overflow'
 @import 'options'
 
 .dropdown
@@ -6,7 +7,6 @@
   width 100%
   height em($dropdown__height, $dropdown__font-size)
   line-height($dropdown__height, $dropdown__font-size)
-  font-size $dropdown__font-size
   color $dropdown__color
   background $dropdown__background
   border solid $dropdown__border-width $dropdown__border-color
@@ -20,21 +20,25 @@
 
   &:hover,
   &:focus
-    background darken($dropdown__background, 6%)
+    background darken($dropdown__background, 2%)
 
   &:before
     display block
     position absolute
     top 50%
-    right 1em
-    margin -0.5em 0
-    height inherit
+    right 0.75em
     line-height inherit
-    border-top solid 1em $dropdown__color
-    border-left solid 1em transparent
-    border-right @border-left
-    border-bottom 0
+    content ''
     z-index 1
+    if $dropdown__arrow-icon
+      margin -0.5em 0
+      content $dropdown__arrow-icon
+    else
+      margin -0.25em 0
+      border-top solid 0.5em $dropdown__color
+      border-left solid 0.5em transparent
+      border-right @border-left
+      border-bottom 0
 
   select
     display block
@@ -47,8 +51,12 @@
     color inherit
     background transparent
     border 0
-    width 110%
+    width 100%
     height 100%
     appearance none
+    text-overflow ''
     cursor pointer
     z-index 2
+
+    &::-ms-expand
+      display none
