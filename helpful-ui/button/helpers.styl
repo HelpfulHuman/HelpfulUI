@@ -1,0 +1,46 @@
+@require '../helpers/overflow'
+
+/**
+ * Generates all of the main styles and peudo class states for
+ * a button.
+ */
+button()
+  display inline-block
+  margin 0
+  padding 0 1em
+  outline 0
+  cursor pointer
+  overflow ellipsis
+  text-align center
+  vertical-align middle
+  border-radius $button__border-radius
+  button-style arguments
+
+  &:hover,
+  &:focus
+    text-decoration none
+
+  &:disabled,
+  &.is-disabled
+    cursor not-allowed
+
+/**
+ * Generates the border, background and text color rules for buttons
+ * based on the given button style, border width and color.
+ */
+button-style()
+  $style  = arguments[0]
+  $border = arguments[1]
+  $color  = arguments[2]
+
+  if $style is solid
+    background $color
+    color light($color) ? darken($color, 25%) : lighten($color, 25%)
+    if $border > 0 and light($color)
+      border solid $border darken($color, 8%)
+    else
+      border 0
+  else if $style is outline
+    background transparent
+    border solid $border $color
+    color $color
