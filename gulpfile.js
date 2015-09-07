@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var del = require('del');
-var plugins = require('gulp-load-plugins');
+var plugins = require('gulp-load-plugins')();
 
 
 /**
