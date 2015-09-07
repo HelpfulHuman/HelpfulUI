@@ -1,10 +1,6 @@
-var gulp = require('gulp')
-  , del = require('del')
-  , rename = require('gulp-rename')
-  , plumber = require('gulp-plumber')
-  , stylus = require('gulp-stylus')
-  , autoprefix = require('gulp-autoprefixer')
-  , minifyCss = require('gulp-minify-css')
+var gulp = require('gulp');
+var del = require('del');
+var plugins = require('gulp-load-plugins');
 
 
 /**
@@ -20,13 +16,12 @@ gulp.task('clean:styles', function (done) {
  * Compile Stylus files, apply vendor prefixes and minify stylesheets.
  */
 gulp.task('styles', ['clean:styles'], function () {
-  return gulp.src('./all.styl')
-    .pipe(plumber())
-    .pipe(stylus())
-    .pipe(autoprefix())
+  return gulp.src('./index.styl')
+    .pipe(plugins.plumber())
+    .pipe(plugins.stylus())
     .pipe(gulp.dest('./'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(minifyCss())
+    .pipe(plugins.rename({ suffix: '.min' }))
+    .pipe(plugins.minifyCss())
     .pipe(gulp.dest('./'))
 })
 

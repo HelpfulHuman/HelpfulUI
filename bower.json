@@ -1,17 +1,17 @@
 {
   "name": "helpful-ui",
-  "version": "0.1.0-alpha",
+  "version": "1.0.0-alpha",
   "authors": [
     "Nick Glenn <nick@helpfulhuman.com>"
   ],
   "main": "main.css",
-  "description": "Opinionated file structure for web styles using Stylus and Gulp.",
+  "description": "Open standard for writing stylesheets and CSS/Stylus framework.",
   "keywords": [
     "ui",
     "stylus",
     "css",
-    "stylesheets",
-    "gulp"
+    "framework",
+    "stylesheets"
   ],
   "license": "MIT",
   "homepage": "https://github.com/HelpfulUI/HelpfulUI",

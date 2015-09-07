@@ -1,8 +1,9 @@
-This project is heavily inspired by [CSStyle](http://csstyle.io).
-
 ## Introduction
 
-Coming soon.
+**Helpful UI** is a specification for creating clean and predictable HTML and CSS.  The goal is to set standards that can be used across multiple projects to make it easier for developers to collaborate efficiently.
+
+This project is heavily inspired by [CSStyle](http://csstyle.io), [SMACSS](https://smacss.com/) and [nib](http://tj.github.io/nib/).
+
 
 ## Usage
 
