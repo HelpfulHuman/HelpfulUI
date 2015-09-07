@@ -1,0 +1,43 @@
+/*
+Helpful UI - Normalization
+
+Most of Helpful UI's base components reset themselves so not
+all of the reset rules are present in this file.
+
+Inspired by...
+
+Eric Meyer                -> http://meyerweb.com
+HTML5 Doctor              -> http://html5doctor.com
+HTML5 Boilerplate         -> http://html5boilerplate.com
+
+*/
+
+reset()
+
+if $global__enforce-height
+  html,
+  body
+    min-height 100%
+    height 100%
+
+/* Handle box-sizing while better addressing child elements:
+http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html
+  box-sizing border-box
+  if $global__enforce-scroll-bar
+    overflow-y scroll
+
+body
+  background $global__background
+  color $global__body-text-color
+  font-family $global__font-paragraph
+  font-size-rem($global__size)
+  font-weight $global__font-weight
+  font-style normal
+  line-height($global__line-height)
+
+
+
+nav
+  ol, ul
+    list-style none

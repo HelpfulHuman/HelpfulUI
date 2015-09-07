@@ -1,0 +1,116 @@
+/**
+ * Resets everything.
+ */
+reset()
+  reset-html()
+  reset-embeds()
+  reset-controls()
+
+/**
+ * Resets the primary HTML elements.
+ */
+reset-html()
+  *,
+  *:before,
+  *:after
+   box-sizing inherit
+
+  html, body, body div, span, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  abbr, address, cite, code, del, dfn, em, img,
+  ins, kbd, q, samp, small, strong, sub, sup, var,
+  b, i, dl, dt, dd, ol, ul, li, fieldset, form,
+  label, legend, table, caption, tbody, tfoot, thead,
+  tr, th, td, article, aside, figure, footer, header,
+  menu, nav, section, time, mark, audio, video,
+  details, summary
+    reset-box-rules()
+    reset-font-rules()
+
+  article, aside, figure, footer, header, nav,
+  section, details, summary
+    display block
+
+/**
+ * Resets inputs and buttons.
+ */
+reset-controls()
+  input, select
+    vertical-align middle
+
+  input[type="radio"]
+    vertical-align text-bottom
+
+  input[type="checkbox"]
+    vertical-align bottom
+
+  input, select, textarea
+    color inherit
+
+  select, input, textarea, button
+    reset-font-rules()
+    appearance none
+
+  label,
+  input[type=button],
+  input[type=submit],
+  input[type=file],
+  button
+    cursor pointer
+    user-select none
+
+  /* make buttons play nice in IE */
+  button,
+  input[type=button]
+    width auto
+    overflow visible
+
+/**
+ * Resets images and other embedded elements.
+ */
+reset-embeds()
+  img,
+  object,
+  embed
+    max-width 100%
+
+reset-tables()
+  table
+    display table
+    border-collapse collapse
+    border-spacing 0
+    color inherit
+
+  tr
+    display table-row
+
+  th, td
+    display table-cell
+
+  th
+    font-weight bold
+    vertical-align bottom
+
+  td
+    font-weight normal
+    vertical-align top
+
+
+/**
+ * Reset rules for box elements.
+ */
+reset-box-rules()
+  margin 0
+  padding 0
+  border 0
+  outline 0
+
+/**
+ * Reset rules for typographic elements.
+ */
+reset-font-rules()
+  font-weight inherit
+  font-style inherit
+  font-family inherit
+  font-size 100%
+  vertical-align baseline

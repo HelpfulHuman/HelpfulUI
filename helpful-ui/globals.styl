@@ -1,0 +1,47 @@
+/**
+ * This file contains default variables that you can override. It
+ * also acts as a dictionary for what variables are available.
+ */
+
+/**
+ * GLOBAL BASE SIZE
+ * This is the default sizes that other sizes will by divided by
+ * to find the correct EM.
+ */
+$global__size                     ?= 16px
+
+/**
+ * ENFORCE HEIGHT
+ * If you want to be able to use 100% on the window size, set this
+ * to true.
+ */
+$global__enforce-height           ?= true
+
+/**
+ * ENFORCE SCROLL BAR
+ * Forces a vertical scroll bar be added to help prevent the page from
+ * being jumpy when page height dynamically change.
+ */
+$global__enforce-scroll-bar       ?= true
+
+/*
+ * IE SUPPORT
+ * Whether or not IE (8+) should specifically be supported.
+ */
+$global__ie-support               ?= true
+
+/*
+ * VENDOR PREFIXES
+ * What vendor prefixes will be applied to vendor helper functions.
+ */
+$global__vendor-prefixes          ?= webkit moz o ms official
+
+/**
+ * MEDIA QUERY SIZES
+ * The media query breakpoints
+ */
+$global__media-xs                 ?= unit(320px / 16, 'em')
+$global__media-sm                 ?= unit(480px / 16, 'em')
+$global__media-md                 ?= unit(768px / 16, 'em')
+$global__media-lg                 ?= unit(1024px / 16, 'em')
+$global__media-xl                 ?= unit(1146px / 16, 'em')
