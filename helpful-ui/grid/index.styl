@@ -1,2 +1,5 @@
-@import 'grid'
-@import 'col'
+@require 'options'
+
+if $grid__enabled
+  @require 'grid'
+  @require 'col'
