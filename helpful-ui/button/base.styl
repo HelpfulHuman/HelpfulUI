@@ -1,0 +1,36 @@
+@require 'options'
+@require 'helpers'
+@require '../helpers/line-height'
+@require '../helpers/units'
+
+button,
+.button,
+a.button
+  display block
+  margin 0
+  padding 0 1em
+  width 100%
+  height pref($button__height)
+  line-height $button__height
+  cursor pointer
+  user-select none
+  overflow ellipsis
+  text-align center
+  vertical-align middle
+  border-radius $button__border-radius
+  button-style $button__default-style $button__border-width $button__default-color
+  if $button__shadow and $button__shadow isnt none
+    box-shadow $button__shadow
+
+  &:hover,
+  &:focus
+    text-decoration none
+    if light($button__default-color)
+      button-style $button__default-style $button__border-width darken($button__default-color, 5%)
+    else
+      button-style $button__default-style $button__border-width lighten($button__default-color, 5%)
+
+  &:disabled,
+  &.is-disabled
+    cursor not-allowed
+    button-style $button__default-style $button__border-width desaturate($button__default-color, 30%)

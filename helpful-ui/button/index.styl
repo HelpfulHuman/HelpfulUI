@@ -1,24 +1,4 @@
 @require 'options'
-@require 'helpers'
 
-button,
-.button,
-a.button
-  button $button__style $button__border-width $button__default-color
-  font-size em($button__font-size)
-  height em($button__height)
-  line-height($button__height, $button__font-size)
-
-  &:hover,
-  &:focus
-    if light($button__default-color)
-      button-style $button__style $button__border-width darken($button__default-color, 10%)
-    else
-      button-style $button__style $button__border-width lighten($button__default-color, 10%)
-
-  &:disabled
-    button-style $button__style $button__border-width saturate($button__default-color, 15%)
-
-  &.\\-fill
-    display block
-    width 100%
+if $button__enabled
+  @require 'base'
