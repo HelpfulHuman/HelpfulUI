@@ -1,8 +1,10 @@
+@require '../helpers/clear'
 @require 'options'
 
 .grid
   margin-left em(-1 * ($grid__gutter-xs / 2))
   margin-right em(-1 * ($grid__gutter-xs / 2))
+  clear children
 
   if $grid__gutter-sm isnt $grid__gutter-xs
     @media (min-width: $global__media-sm)
@@ -23,11 +25,3 @@
     @media (min-width: $global__media-xl)
       margin-left em(-1 * ($grid__gutter-xl / 2))
       margin-right em(-1 * ($grid__gutter-xl / 2))
-
-  &:before,
-  &:after
-    content ' '
-    display table
-
-  &:after
-    clear both

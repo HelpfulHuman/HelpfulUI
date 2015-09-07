@@ -19,7 +19,7 @@ grid-column-width($columns, $total = $grid__columns)
 grid-column-classes($prefix, $total = $grid__columns)
   for $i in (1)..($total)
     &.{$prefix + $i}
-    width grid-column-width($i, $total)
+      width grid-column-width($i, $total)
 
     &.{$prefix + $i}-push
       margin-left grid-column-width($i, $total)
