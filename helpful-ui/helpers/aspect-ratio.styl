@@ -1,0 +1,17 @@
+/**
+ * Provides rules for a responsive component that maintains a given
+ * aspect ratio.
+ */
+aspect-ratio()
+  if arguments[0] is a 'unit'
+    if arguments[1] is a 'unit'
+      $ratio = (arguments[1] / arguments[0]) * 100
+    else if unit(arguments[0]) is 'em' or unit(arguments[0]) is 'rem'
+      $ratio = arguments[0] * 100
+    else
+      $ratio = arguments[0]
+    position relative
+    width 100%
+    padding 0 0 unit($ratio, '%')
+  else
+    (error 'You must provide a valid unit or units for apsect ratio calculation')
