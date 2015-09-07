@@ -1,12 +1,35 @@
-/* tables still need cellspacing="0" in the markup */
+@require 'options'
+
 table
+  display table
+  border-collapse collapse
+  border-spacing 0
   border 0
+  color inherit
+
+tr
+  display table-row
+  if $table__striped
+    &:nth-child(odd)
+      background $table__background
+    &:nth-child(even)
+      background $table__background-alt
 
 th, td
-  text-align center
+  display table-cell
+  if $table__use-proper-alignment
+    text-align center
 
-  &:first-child
-    text-align left
+    &:first-child
+      text-align left
 
-  &:last-child
-    text-align right
+    &:last-child
+      text-align right
+
+th
+  font-weight bold
+  vertical-align bottom
+
+td
+  font-weight normal
+  vertical-align top
