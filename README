@@ -6,6 +6,75 @@ This project is heavily inspired by standards like [CSStyle](http://csstyle.io) 
 
 ## Getting Started
 
+Helpful UI is built in a very similar fashion to [nib](https://github.com/tj/nib) and can therefore be used in similar contexts.  Additionally, we've set it up so you can pull down the files via Bower if you prefer it.
+
+### Express / Connect
+
+```javascript
+var connect = require('connect')
+var stylus = require('stylus')
+var ui = require('helpful-ui')
+
+var server = connect()
+
+function compile(str, path) {
+  return stylus(str)
+    .set('filename', path)
+    .set('compress', true)
+    .use(ui())
+}
+
+server.use(stylus.middleware({
+    src: __dirname,
+    compile: compile
+}))
+```
+
+### Gulp
+
+If you're using the [gulp-stylus](https://www.npmjs.com/package/gulp-stylus) plugin, install `helpful-ui` and call it in gulp-stylus' `use` parameter.
+
+```javascript
+var gulp = require('gulp')
+var stylus = require('gulp-stylus')
+var ui = require('helpful-ui')
+
+gulp.task('styles', function () {
+  return gulp.src('*.styl')
+    .pipe(stylus({
+      use: [ ui() ]  // magic sauce
+    }))
+    .pipe(gulp.dest('./'))
+})
+```
+
+### Bower
+
+Install via Bower
+
+```
+bower install helpful-ui
+```
+
+## Usage
+
+If you used the [Express / Connect](#express-connect) or [Gulp](#gulp) set-ups mentioned previously, you can simply import Helpful UI's main file (if you want everything) or you can cherry pick particular components and helpers.
+
+```stylus
+// load everything
+@import 'helpful-ui'
+
+// load only the helpers
+@import 'helpful-ui/helpers'
+
+// load only the reset sheet
+@import 'helpful-ui/reset'
+
+// load everything but the button styles
+$button__enabled = false
+@import 'helpful-ui'
+```
+
 ## Selector Types
 
 The following section helps explain the various rules for naming classes and how they are used to create more readable mark up.
