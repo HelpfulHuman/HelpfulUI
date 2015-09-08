@@ -9,7 +9,7 @@ var plugins = require('gulp-load-plugins')();
  * Various clean tasks that remove un-needed code from each build.
  */
 gulp.task('clean:styles', function (done) {
-  del(['./all.css'], done);
+  del(['./*.css'], done);
 });
 
 /**
