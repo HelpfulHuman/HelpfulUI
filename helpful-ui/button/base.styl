@@ -11,6 +11,8 @@ a.button
   padding 0 pref(($button__height - $button__size) / 2, $button__size)
   width 100%
   height pref($button__height, $button__size)
+  if $button__size isnt $global__size
+    font-size pref($button__size)
   line-height $button__height $button__size
   cursor pointer
   user-select none

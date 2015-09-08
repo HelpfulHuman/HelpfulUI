@@ -891,7 +891,6 @@ a.button.is-disabled {
   margin: 0;
   padding-left: 1em;
   padding-right: 1em;
-  font: inherit;
   line-height: inherit;
   color: inherit;
   background: transparent;

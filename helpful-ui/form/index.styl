@@ -12,6 +12,8 @@ textarea
   color $form__color
   border-radius $form__border-radius
   placeholder $form__border-color
+  if $form__size isnt $global__size
+    font-size pref($form__size)
   if $form__shadow and $form__shadow isnt none
     box-shadow $form__shadow
 

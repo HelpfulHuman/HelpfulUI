@@ -6,6 +6,8 @@
   display block
   width 100%
   height pref($dropdown__height, $dropdown__size)
+  if $dropdown__size isnt $global__size
+    font-size pref($dropdown__size)
   line-height $dropdown__height $dropdown__size
   color $dropdown__color
   background $dropdown__background
@@ -46,7 +48,6 @@
     margin 0
     padding-left 1em
     padding-right @padding-left
-    font inherit
     line-height inherit
     color inherit
     background transparent
