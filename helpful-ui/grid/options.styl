@@ -1,0 +1,35 @@
+@require '../theme'
+
+/**
+ * ENABLE
+ *
+ * Enables or disables the grid module and/or features using a simple
+ * boolean variable.
+ */
+$grid__enabled                 ?= true
+
+/**
+ * COLUMNS
+ *
+ * The total number of columns to use in this grid.
+ */
+$grid__columns                  ?= 12
+
+/**
+ * GUTTER DEFAULT
+ *
+ * The default gutter size to use.
+ */
+$grid__gutter                   ?= 30px
+
+/**
+ * GUTTERS
+ *
+ * Different sized gutters that can change spacing for the grid
+ * based on media queries.
+ */
+$grid__gutter-xs                ?= $grid__gutter / 3
+$grid__gutter-sm                ?= $grid__gutter / 2
+$grid__gutter-md                ?= $grid__gutter
+$grid__gutter-lg                ?= $grid__gutter-md
+$grid__gutter-xl                ?= $grid__gutter-lg

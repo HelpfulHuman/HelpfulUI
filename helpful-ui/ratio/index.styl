@@ -1,0 +1,14 @@
+@import '../helpers/aspect-ratio'
+
+.ratio
+  aspect-ratio 4 3
+
+  img, embed, object, video
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+
+  &.\\-wide
+    padding-bottom unit(9 / 16, '%')

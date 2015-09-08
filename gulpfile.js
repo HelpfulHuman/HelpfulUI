@@ -1,10 +1,7 @@
-var gulp = require('gulp')
-  , del = require('del')
-  , rename = require('gulp-rename')
-  , plumber = require('gulp-plumber')
-  , stylus = require('gulp-stylus')
-  , autoprefix = require('gulp-autoprefixer')
-  , minifyCss = require('gulp-minify-css')
+var gulp = require('gulp');
+var del = require('del');
+var browsersync = require('browser-sync');
+var plugins = require('gulp-load-plugins')();
 
 
 /**
@@ -12,39 +9,51 @@ var gulp = require('gulp')
  * Various clean tasks that remove un-needed code from each build.
  */
 gulp.task('clean:styles', function (done) {
-  del(['./all.css'], done)
-})
+  del(['./*.css'], done);
+});
 
 /**
  * STYLES:COMPILE
  * Compile Stylus files, apply vendor prefixes and minify stylesheets.
  */
 gulp.task('styles', ['clean:styles'], function () {
-  return gulp.src('./all.styl')
-    .pipe(plumber())
-    .pipe(stylus())
-    .pipe(autoprefix())
+  return gulp.src('./*.styl')
+    .pipe(plugins.plumber())
+    .pipe(plugins.stylus())
     .pipe(gulp.dest('./'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(minifyCss())
-    .pipe(gulp.dest('./'))
-})
+    .pipe(plugins.rename({ suffix: '.min' }))
+    .pipe(plugins.minifyCss())
+    .pipe(gulp.dest('./'));
+});
 
 /**
  * BUILD
  * Run all compilation tasks.
  */
-gulp.task('build', ['styles'])
+gulp.task('build', ['styles']);
 
 /**
  * WATCH
  * Automatically run tasks on file change.
  */
 gulp.task('watch', ['build'], function () {
-  gulp.watch('./**/*.styl', ['styles'])
-})
+  gulp.watch('./**/*.styl', ['styles']).on('change', browsersync.reload);
+  gulp.watch('./index.html', []).on('change', browsersync.reload);
+});
+
+/**
+ * SERVER
+ * Start a browser sync server for the project.
+ */
+gulp.task('serve', ['watch'], function () {
+  browsersync.init({
+    server: {
+      baseDir: './'
+    }
+  });
+});
 
 /**
  * DEFAULT TASK
  */
-gulp.task('default', ['watch'])
+gulp.task('default', ['watch']);

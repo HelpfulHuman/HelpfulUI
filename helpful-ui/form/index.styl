@@ -1,0 +1,32 @@
+@require 'options'
+@require '../helpers/placeholder'
+@require '../helpers/units'
+
+input,
+textarea
+  display block
+  padding 0 pref(($form__height - $form__size) / 2, $form__size)
+  width 100%
+  border solid $form__border-width $form__border-color
+  background $form__background
+  color $form__color
+  border-radius $form__border-radius
+  placeholder $form__border-color
+  if $form__size isnt $global__size
+    font-size pref($form__size)
+  if $form__shadow and $form__shadow isnt none
+    box-shadow $form__shadow
+
+  &:hover,
+  &:focus
+    background darken($form__background, 2%)
+
+input
+  vertical-align middle
+  height pref($form__height, $form__size)
+  line-height $form__height $form__size
+
+textarea
+  padding-top 0.5em
+  padding-bottom @padding-top
+  line-height inherit

@@ -1,0 +1,15 @@
+@require '../grid/options'
+
+/**
+ * Generates a new set of column modifiers.
+ *
+ * @param  {String} $prefix
+ * @param  {Number} $total
+ */
+grid-column-classes($prefix, $total = $grid__columns)
+  for $i in (1)..($total)
+    &.{$prefix + $i}
+      width unit(($i / $total) * 100, '%')
+
+    &.{$prefix + $i}-push
+      margin-left unit(($i / $total) * 100, '%')

@@ -1,0 +1,61 @@
+@require '../helpers/text-overflow'
+@require 'options'
+
+.dropdown
+  position relative
+  display block
+  width 100%
+  height pref($dropdown__height, $dropdown__size)
+  if $dropdown__size isnt $global__size
+    font-size pref($dropdown__size)
+  line-height $dropdown__height $dropdown__size
+  color $dropdown__color
+  background $dropdown__background
+  border solid $dropdown__border-width $dropdown__border-color
+  cursor pointer
+  vertical-align middle
+  if $dropdown__border-radius
+    border-radius $dropdown__border-radius
+  if $dropdown__shadow and $dropdown__shadow isnt none
+    box-shadow $dropdown__shadow
+
+
+  &:hover,
+  &:focus
+    background darken($dropdown__background, 2%)
+
+  &:before
+    display block
+    position absolute
+    top 50%
+    right 0.75em
+    line-height inherit
+    content ''
+    z-index 1
+    if $dropdown__arrow-icon
+      margin -0.5em 0
+      content $dropdown__arrow-icon
+    else
+      margin -0.25em 0
+      border-top solid 0.5em $dropdown__color
+      border-left solid 0.5em transparent
+      border-right @border-left
+      border-bottom 0
+
+  select
+    display block
+    position relative
+    margin 0
+    padding-left 1em
+    padding-right @padding-left
+    color inherit
+    background transparent
+    border 0
+    width 100%
+    height 100%
+    text-overflow ''
+    cursor pointer
+    z-index 2
+
+    &::-ms-expand
+      display none

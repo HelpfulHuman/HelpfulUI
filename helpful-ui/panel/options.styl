@@ -1,0 +1,51 @@
+@require '../theme'
+
+/**
+ * PANEL
+ *
+ * Variables for panel style.
+ */
+$panel__size                ?= $global__size
+$panel__padding             ?= 20px
+$panel__color               ?= $theme__control-color
+$panel__background          ?= $theme__control-background
+$panel__shadow              ?= $theme__control-shadow
+$panel__border-color        ?= $theme__control-border-color
+$panel__border-width        ?= $theme__control-border-width
+$panel__border-radius       ?= pref($theme__control-radius, $panel__size)
+
+/**
+ * PANEL HEADER
+ *
+ * Variables for the panel header style.
+ */
+$panel__header-size         ?= $theme__heading-4-font-size
+$panel__header-padding      ?= $panel__padding
+$panel__header-color        ?= $panel__color
+$panel__header-background   ?= darken($panel__background, 4%)
+$panel__header-border-width ?= $panel__border-width
+$panel__header-border-color ?= $panel__border-color
+
+/**
+ * PANEL BODY
+ *
+ * Variables for the panel body style.
+ */
+$panel__body-size           ?= $panel__size
+$panel__body-padding        ?= $panel__padding
+$panel__body-color          ?= $panel__color
+$panel__body-background     ?= $panel__background
+$panel__body-border-width   ?= $panel__border-width
+$panel__body-border-color   ?= $panel__border-color
+
+/**
+ * PANEL FOOTER
+ *
+ * Variables for the panel footer style.
+ */
+$panel__footer-size         ?= $panel__size
+$panel__footer-padding      ?= $panel__padding
+$panel__footer-color        ?= $panel__color
+$panel__footer-background   ?= darken($panel__background, 4%)
+$panel__footer-border-width ?= $panel__border-width
+$panel__footer-border-color ?= $panel__border-color

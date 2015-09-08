@@ -1,0 +1,24 @@
+@require '../theme'
+
+/**
+ * ENABLE
+ *
+ * Enables or disables the table module and/or features using a simple
+ * boolean variable.
+ */
+$button__enabled                ?= true
+
+/**
+ * BUTTONS
+ *
+ * Variables for button style.
+ */
+$button__size                   ?= $global__size
+$button__font-style             ?= inherit
+$button__font-weight            ?= inherit
+$button__height                 ?= $theme__control-height
+$button__border-radius          ?= pref($theme__control-radius, $button__size)
+$button__shadow                 ?= $theme__control-shadow
+$button__border-width           ?= $theme__control-border-width
+$button__default-style          ?= solid
+$button__default-color          ?= $theme__brand-color-300
