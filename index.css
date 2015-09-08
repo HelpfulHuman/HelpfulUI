@@ -355,16 +355,15 @@ h6,
 input,
 textarea {
   display: block;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0 0.5em;
   width: 100%;
   border: solid 1px #b1b1b1;
   background: #fff;
   color: $form__color;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 0.125em;
+  -moz-border-radius: 0.125em;
+  -ms-border-radius: 0.125em;
+  border-radius: 0.125em;
 }
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
@@ -403,7 +402,7 @@ button,
 a.button {
   display: block;
   margin: 0;
-  padding: 0 1em;
+  padding: 0 0.5em;
   width: 100%;
   height: 2em;
   line-height: 2;
@@ -414,10 +413,10 @@ a.button {
   text-overflow: ellipsis;
   text-align: center;
   vertical-align: middle;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 0.125em;
+  -moz-border-radius: 0.125em;
+  -ms-border-radius: 0.125em;
+  border-radius: 0.125em;
   background: #673ab7;
   color: #fff;
   border: 0;
@@ -440,7 +439,7 @@ button.is-disabled,
 .button.is-disabled,
 a.button.is-disabled {
   cursor: not-allowed;
-  background: #6c4da4;
+  background: #6f569b;
   color: #fff;
   border: 0;
 }
@@ -863,10 +862,10 @@ a.button.is-disabled {
   border: solid 1px #b1b1b1;
   cursor: pointer;
   vertical-align: middle;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 0.125em;
+  -moz-border-radius: 0.125em;
+  -ms-border-radius: 0.125em;
+  border-radius: 0.125em;
 }
 .dropdown:hover,
 .dropdown:focus {

@@ -5,8 +5,7 @@
 input,
 textarea
   display block
-  padding-left 1em
-  padding-right @padding-left
+  padding 0 pref(($form__height - $form__size) / 2, $form__size)
   width 100%
   border solid $form__border-width $form__border-color
   background $form__background
@@ -22,8 +21,8 @@ textarea
 
 input
   vertical-align middle
-  height em($form__height)
-  line-height $form__height
+  height pref($form__height, $form__size)
+  line-height $form__height $form__size
 
 textarea
   padding-top 0.5em

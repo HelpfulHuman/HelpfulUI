@@ -2,26 +2,26 @@
 @require 'options'
 
 .grid
-  margin-left em(-1 * ($grid__gutter-xs / 2))
-  margin-right em(-1 * ($grid__gutter-xs / 2))
+  margin-left pref(-1 * ($grid__gutter-xs / 2))
+  margin-right pref(-1 * ($grid__gutter-xs / 2))
   clear children
 
   if $grid__gutter-sm isnt $grid__gutter-xs
     @media (min-width: $global__media-sm)
-      margin-left em(-1 * ($grid__gutter-sm / 2))
-      margin-right em(-1 * ($grid__gutter-sm / 2))
+      margin-left pref(-1 * ($grid__gutter-sm / 2))
+      margin-right pref(-1 * ($grid__gutter-sm / 2))
 
   if $grid__gutter-md isnt $grid__gutter-sm
     @media (min-width: $global__media-md)
-      margin-left em(-1 * ($grid__gutter-md / 2))
-      margin-right em(-1 * ($grid__gutter-md / 2))
+      margin-left pref(-1 * ($grid__gutter-md / 2))
+      margin-right pref(-1 * ($grid__gutter-md / 2))
 
   if $grid__gutter-lg isnt $grid__gutter-md
     @media (min-width: $global__media-lg)
-      margin-left em(-1 * ($grid__gutter-lg / 2))
-      margin-right em(-1 * ($grid__gutter-lg / 2))
+      margin-left pref(-1 * ($grid__gutter-lg / 2))
+      margin-right pref(-1 * ($grid__gutter-lg / 2))
 
   if $grid__gutter-xl isnt $grid__gutter-lg
     @media (min-width: $global__media-xl)
-      margin-left em(-1 * ($grid__gutter-xl / 2))
-      margin-right em(-1 * ($grid__gutter-xl / 2))
+      margin-left pref(-1 * ($grid__gutter-xl / 2))
+      margin-right pref(-1 * ($grid__gutter-xl / 2))

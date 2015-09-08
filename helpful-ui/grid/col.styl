@@ -3,32 +3,32 @@
 .col
   float left
   display block
-  padding-left em($grid__gutter-xs / 2)
-  padding-right em($grid__gutter-xs / 2)
+  padding-left pref($grid__gutter-xs / 2)
+  padding-right pref($grid__gutter-xs / 2)
   width 100%
 
   grid-column-classes('\+xs')
 
   @media (min-width: $global__media-sm)
     if $grid__gutter-sm isnt $grid__gutter-xs
-      padding-left em($grid__gutter-sm / 2)
-      padding-right em($grid__gutter-sm / 2)
+      padding-left pref($grid__gutter-sm / 2)
+      padding-right pref($grid__gutter-sm / 2)
     grid-column-classes('\+sm')
 
   @media (min-width: $global__media-md)
     if $grid__gutter-md isnt $grid__gutter-sm
-      padding-left em($grid__gutter-md / 2)
-      padding-right em($grid__gutter-md / 2)
+      padding-left pref($grid__gutter-md / 2)
+      padding-right pref($grid__gutter-md / 2)
     grid-column-classes('\+md')
 
   @media (min-width: $global__media-lg)
     if $grid__gutter-lg isnt $grid__gutter-md
-      padding-left em($grid__gutter-lg / 2)
-      padding-right em($grid__gutter-lg / 2)
+      padding-left pref($grid__gutter-lg / 2)
+      padding-right pref($grid__gutter-lg / 2)
     grid-column-classes('\+lg')
 
   @media (min-width: $global__media-xl)
     if $grid__gutter-xl isnt $grid__gutter-lg
-      padding-left em($grid__gutter-xl / 2)
-      padding-right em($grid__gutter-xl / 2)
+      padding-left pref($grid__gutter-xl / 2)
+      padding-right pref($grid__gutter-xl / 2)
     grid-column-classes('\+xl')
