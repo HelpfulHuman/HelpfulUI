@@ -923,3 +923,48 @@ a.button.is-disabled {
 .ratio.\-wide {
   padding-bottom: 0.5625%;
 }
+.panel {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  color: #7e7e7e;
+  background: #fff;
+  border: solid 1px #b1b1b1;
+  -webkit-border-radius: 0.125em;
+  -moz-border-radius: 0.125em;
+  -ms-border-radius: 0.125em;
+  border-radius: 0.125em;
+}
+.panel > header,
+.panel__header {
+  display: block;
+  margin: 0;
+  padding: 0.952380952380952em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+  font-size: 1.3125em;
+  border-bottom: solid 1px #b1b1b1;
+  background: #f5f5f5;
+}
+.panel > section,
+.panel__section,
+.panel__body {
+  display: block;
+  margin: 0;
+  padding: 1.25em;
+}
+.panel > section + section,
+.panel__section + .panel__section {
+  border-top: solid 1px #b1b1b1;
+}
+.panel > footer,
+.panel__footer {
+  display: block;
+  margin: 0;
+  padding: 1.25em;
+  border-top: solid 1px #b1b1b1;
+  background: #f5f5f5;
+}

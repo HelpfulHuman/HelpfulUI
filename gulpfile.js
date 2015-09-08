@@ -17,7 +17,7 @@ gulp.task('clean:styles', function (done) {
  * Compile Stylus files, apply vendor prefixes and minify stylesheets.
  */
 gulp.task('styles', ['clean:styles'], function () {
-  return gulp.src('./index.styl')
+  return gulp.src('./*.styl')
     .pipe(plugins.plumber())
     .pipe(plugins.stylus())
     .pipe(gulp.dest('./'))
