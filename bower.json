@@ -14,7 +14,7 @@
     "stylesheets"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/HelpfulUI/HelpfulUI",
+  "homepage": "https://github.com/HelpfulHuman/HelpfulUI",
   "ignore": [
     "**/.*",
     "node_modules",
