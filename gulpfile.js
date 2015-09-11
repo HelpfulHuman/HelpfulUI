@@ -3,20 +3,11 @@ var del = require('del');
 var browsersync = require('browser-sync');
 var plugins = require('gulp-load-plugins')();
 
-
-/**
- * CLEAN
- * Various clean tasks that remove un-needed code from each build.
- */
-gulp.task('clean:styles', function (done) {
-  del(['./*.css'], done);
-});
-
 /**
  * STYLES:COMPILE
  * Compile Stylus files, apply vendor prefixes and minify stylesheets.
  */
-gulp.task('styles', ['clean:styles'], function () {
+gulp.task('styles', function () {
   return gulp.src('./*.styl')
     .pipe(plugins.plumber())
     .pipe(plugins.stylus())
