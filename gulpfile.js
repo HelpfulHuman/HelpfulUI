@@ -33,6 +33,28 @@ gulp.task('watch', ['build'], function () {
 });
 
 /**
+ * TEST
+ * Runs all assertion tests for each of the render cases.
+ */
+gulp.task('test', function () {
+  return gulp
+    .src('test/runner.js', {read: false})
+    .pipe(plugins.mocha({
+      reporter: 'spec',
+      ignoreLeaks: true,
+      growl: true
+    }));
+});
+
+/**
+ * TDD
+ * Run tests upon relevant file changes.
+ */
+gulp.task('tdd', function () {
+  gulp.watch(['./helpful-ui/**/*', './test/cases/**/*'], ['test']);
+});
+
+/**
  * SERVER
  * Start a browser sync server for the project.
  */
