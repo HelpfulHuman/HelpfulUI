@@ -5,68 +5,80 @@
  * -------------------------------------------------------------------
  */
 
-/**
- * GLOBAL BASE SIZE
- *
- * This is the default sizes that other sizes will by divided by
- * to find the correct EM.
- */
-$global__size                     ?= 16px
+$global = merge({
 
-/**
- * ENFORCE HEIGHT
- *
- * If you want to be able to use 100% on the window size, set this
- * to true.
- */
-$global__enforce-height           ?= true
+  /**
+   * GLOBAL BASE SIZE
+   *
+   * This is the default sizes that other sizes will by divided by
+   * to find the correct EM.
+   */
+  font-size: 16px
 
-/**
- * ENFORCE SCROLL BAR
- *
- * Forces a vertical scroll bar be added to help prevent the page from
- * being jumpy when page height dynamically change.
- */
-$global__enforce-scroll-bar       ?= true
+  /**
+   * ENFORCE HEIGHT
+   *
+   * If you want to be able to use 100% on the window size, set this
+   * to true.
+   */
+  enforce-height: true
 
-/*
- * IE SUPPORT
- *
- * Whether or not IE (8+) should specifically be supported.
- */
-$global__ie-support               ?= true
+  /**
+   * ENFORCE SCROLL BAR
+   *
+   * Forces a vertical scroll bar be added to help prevent the page from
+   * being jumpy when page height dynamically change.
+   */
+  enforce-scroll-bar: true
 
-/*
- * VENDOR PREFIXES
- *
- * What vendor prefixes will be applied to vendor helper functions.
- */
-$global__vendor-prefixes          ?= webkit moz o ms official
+  /*
+   * IE SUPPORT
+   *
+   * Whether or not IE (8+) should specifically be supported.
+   */
+  ie-support: true
 
-/**
- * PREFERRED UNIT TYPE
- *
- * Through the use of transparent rule functions, an attempt to convert
- * the given units to the preferred type automatically. Simply set this
- * to false to disable or choose one of the following: px, em, rem
- */
-$global__preferred-unit           ?= em
+  /*
+   * VENDOR PREFIXES
+   *
+   * What vendor prefixes will be applied to vendor helper functions.
+   */
+  vendor-prefixes: webkit moz o ms official
 
-/**
- * ENABLE DEFAULT UTILITIES
- *
- * Enable or disable the default utility classes for things like size
- * and clear by setting this variable to true or false.
- */
-$global__use_default_utils        ?= true
+  /**
+   * PREFERRED UNIT TYPE
+   *
+   * Through the use of transparent rule functions, an attempt to convert
+   * the given units to the preferred type automatically. Simply set this
+   * to false to disable or choose one of the following: px, em, rem
+   */
+  preferred-unit: em
 
-/**
- * MEDIA QUERY SIZES
- *
- * The media query breakpoints
- */
-$global__media-xs                 ?= unit(320px / 16, 'em')
-$global__media-sm                 ?= unit(480px / 16, 'em')
-$global__media-md                 ?= unit(768px / 16, 'em')
-$global__media-lg                 ?= unit(1024px / 16, 'em')
-$global__media-xl                 ?= unit(1146px / 16, 'em')
+  /**
+   * SELECTOR FORMATS
+   *
+   * The formatting rules for the different types of selectors.  Set to
+   * match Helpful UI's standard by default.
+   */
+  formats: {
+    component: '%s .%s'
+    part: '%s__%s'
+    modifier: '%s.\+%s'
+    state: '%s.is-%s'
+    context: '%s.as-%s'
+  }
+
+  /**
+   * MEDIA QUERY SIZES
+   *
+   * The media query breakpoints
+   */
+  breakpoints: {
+    xs: unit(320px / 16, 'em')
+    sm: unit(480px / 16, 'em')
+    md: unit(768px / 16, 'em')
+    lg: unit(1024px / 16, 'em')
+    xl: unit(1146px / 16, 'em')
+  }
+
+}, $global)

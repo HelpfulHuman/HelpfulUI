@@ -1,0 +1,38 @@
+button,
+.button,
+input[type="submit"] {
+  display: block;
+  margin: 0;
+  padding: 0 1em;
+  width: 100%;
+  height: 2em;
+  line-height: 2;
+  cursor: pointer;
+  user-select: none;
+  overflow: ellipsis;
+  text-align: center;
+  vertical-align: middle;
+  font-style: inherit;
+  font-weight: inherit;
+  border-radius: 2px;
+  box-shadow: none;
+  border: none;
+}
+button:hover,
+.button:hover,
+input[type="submit"]:hover {
+  text-decoration: none;
+}
+button:focus,
+.button:focus,
+input[type="submit"]:focus {
+  outline: 0;
+}
+button:disabled,
+.button:disabled,
+input[type="submit"]:disabled,
+button.is-disabled,
+.button.is-disabled,
+input[type="submit"].is-disabled {
+  cursor: not-allowed;
+}

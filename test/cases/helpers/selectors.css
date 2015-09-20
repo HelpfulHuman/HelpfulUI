@@ -1,0 +1,64 @@
+.single {
+  display: block;
+}
+.single__part-1 {
+  display: block;
+}
+.single__part-1.is-state-1 {
+  display: block;
+}
+.single__part-1 .nested-1 {
+  display: block;
+}
+.single__part-1 .nested-1__part-2 {
+  display: block;
+}
+.single__part-1 .nested-1__part-2.\+util-1 {
+  display: block;
+}
+.single__part-1 .nested-1__part-2.\+util-1.is-state-2 {
+  display: block;
+}
+.single__part-1 .nested-1__part-2.\+util-1.is-state-2 .nested-1__part-3 {
+  display: block;
+}
+.root-by-force {
+  display: block;
+}
+.root-by-force__part-4 {
+  display: block;
+}
+.grouped-1,
+.grouped-2 {
+  display: block;
+}
+.grouped-1__part-5,
+.grouped-2__part-5 {
+  display: block;
+}
+.grouped-1__part-5 .grouped-1__part-6,
+.grouped-2__part-5 .grouped-2__part-6 {
+  display: block;
+}
+.grouped-1__part-5 .grouped-1__part-6.\+util-2,
+.grouped-2__part-5 .grouped-2__part-6.\+util-2 {
+  display: block;
+}
+.root-by-force__part-7 {
+  display: block;
+}
+body.as-home-page {
+  display: block;
+}
+body.as-home-page .single {
+  display: block;
+}
+body.as-home-page .single__part-8 {
+  display: block;
+}
+body.as-home-page .single__part-8 .single__part-9 {
+  display: block;
+}
+body.as-home-page .single__part-8 .single__part-9.is-state-3 {
+  display: block;
+}

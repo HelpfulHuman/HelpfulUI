@@ -1,0 +1,53 @@
+@require 'options'
+@require '../helpers/text-overflow'
+@require '../helpers/selectors'
+@require '../helpers/rules'
+
+{component($dropdown.selector)}
+  rules($dropdown.states.default)
+
+  &:hover
+    rules($dropdown.states.hover)
+
+  &:focus,
+  {state('focused')}
+    rules($dropdown.states.focus)
+
+  {state('disabled')}
+    rules($dropdown.states.disabled)
+
+  &:before
+    z-index 1
+    if $dropdown.arrow is 'css'
+      display block
+      position absolute
+      top 50%
+      right 0.75em
+      margin -0.25em 0
+      content ''
+      line-height inherit
+      $_temp = $dropdown.states.default.color
+      border-top solid 0.5em $_temp
+      border-left solid 0.5em transparent
+      border-right @border-left
+      border-bottom 0
+    else
+      rules($dropdown.arrow)
+
+  select
+    display block
+    position relative
+    margin 0
+    padding-left 1em
+    padding-right @padding-left
+    color inherit
+    background transparent
+    border 0
+    width 100%
+    height 100%
+    text-overflow ''
+    cursor pointer
+    z-index 2
+
+    &::-ms-expand
+      display none

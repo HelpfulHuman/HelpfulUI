@@ -1,16 +1,86 @@
 @require '../theme'
+@require '../helpers/units'
+@require '../helpers/line-height'
 
-/**
- * DROP DOWN
- *
- * Variables for dropdown style.
- */
-$dropdown__size            ?= $global__size
-$dropdown__color           ?= $theme__control-color
-$dropdown__background      ?= $theme__control-background
-$dropdown__height          ?= $theme__control-height
-$dropdown__shadow          ?= $theme__control-shadow
-$dropdown__border-color    ?= $theme__control-border-color
-$dropdown__border-width    ?= $theme__control-border-width
-$dropdown__border-radius   ?= pref($theme__control-radius, $dropdown__size)
-$dropdown__arrow-icon      ?= false
+$dropdown = merge({
+
+  /**
+   * ENABLE
+   *
+   * Enables the module and features when set to "true".
+   */
+  enabled: true
+
+  /**
+   * SELECTOR NAME
+   *
+   * Change the selector name for the component.
+   */
+  selector: 'dropdown'
+
+  /**
+   * USE AUTOMATIC CONVERSIONS
+   *
+   * When set to "true", units like "height" and "line-height" will auto-
+   * matically be converted to the preferred unit type using the "pref()"
+   * method.
+   */
+  convert-units: true
+
+  /**
+   * STYLES
+   *
+   * The styles for the dropdown component.
+   */
+  states: {
+
+    // default state
+    default: {
+      position: relative
+      display: block
+      width: 100%
+      cursor: pointer
+      vertical-align: middle
+      font-size: $theme.control.font-size
+      color: #4e4e4e
+      background: $theme.control.background
+      height: $theme.control.height
+      box-shadow: $theme.control.box-shadow
+      border-style: $theme.control.border-style
+      border-width: $theme.control.border-width
+      border-color: $theme.control.border-color
+      border-radius: $theme.control.border-radius
+    }
+
+    // hover state
+    hover: {
+      background: darken($theme.control.border-color, 5%)
+    }
+
+    // focus state
+    focus: {
+      background: darken($theme.control.border-color, 5%)
+    }
+
+    // disabled state
+    disabled: {
+      cursor: not-allowed
+    }
+
+  }
+
+  /**
+   * ARROW
+   *
+   * The dropdown arrow on the right hand side.
+   */
+  arrow: 'css'
+
+}, $dropdown)
+
+// run any recommended conversions...
+if $dropdown.convert-units
+  $dropdown.states.default.height = pref($dropdown.states.default.height, $dropdown.states.default.font-size)
+
+  if $dropdown.states.default.font-size is $global.font-size
+    remove($dropdown.states.default, 'font-size')

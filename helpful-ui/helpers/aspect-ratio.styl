@@ -10,8 +10,6 @@ aspect-ratio()
       $ratio = arguments[0] * 100
     else
       $ratio = arguments[0]
-    position relative
-    width 100%
     padding 0 0 unit($ratio, '%')
   else
-    (error 'You must provide a valid unit or units for apsect ratio calculation')
+    (error 'You must provide a valid unit or units for aspect ratio calculation')
