@@ -8,12 +8,12 @@
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-em($amount, $base = $global__size)
+em($amount, $base = $global.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'px'
       $amount = unit($amount / $base, 'em')
     else if unit($amount) is 'rem'
-      $amount = unit($amount, 'em')
+      $amount = unit($amount / $base, 'em')
     else if unit($amount) is '%'
       $amount = unit($amount / 100, 'em')
   return $amount
@@ -26,12 +26,12 @@ em($amount, $base = $global__size)
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-rem($amount, $base = $global__size)
+rem($amount, $base = $global.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'px'
       $amount = unit($amount / $base, 'rem')
-    else if unit($amount) is 'rem'
-      $amount = unit($amount, 'rem')
+    else if unit($amount) is 'em'
+      $amount = unit($amount / $base, 'rem')
     else if unit($amount) is '%'
       $amount = unit($amount / 100, 'rem')
   return $amount
@@ -44,7 +44,7 @@ rem($amount, $base = $global__size)
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-percentage($amount, $base = $global__size)
+percent($amount, $base = $global.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'px'
       $amount = unit(($amount / $base) * 100, '%')
@@ -59,7 +59,7 @@ percentage($amount, $base = $global__size)
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-px($amount, $base = $global__size)
+px($amount, $base = $global.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'em' or unit($amount) is 'rem'
       $amount = unit($amount * $base, 'px')
@@ -75,7 +75,7 @@ px($amount, $base = $global__size)
  * @param  {Number} $base
  * @param  {String} $unit
  */
-pref($amount, $base = $global__size, $unit = $global__preferred-unit)
+pref($amount, $base = $global.font-size, $unit = $global.preferred-unit)
   if $unit
     if $unit is em
       $amount = em($amount, $base)
