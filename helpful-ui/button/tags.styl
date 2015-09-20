@@ -8,9 +8,11 @@ button,
 input[type="submit"]
   rules($button.states.default)
 
-  &:hover,
-  &:focus
+  &:hover
     rules($button.states.hover)
+
+  &:focus
+    rules($button.states.focus)
 
   &:disabled,
   {state('disabled')}
