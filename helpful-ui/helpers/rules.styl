@@ -1,11 +1,13 @@
 /**
- * Takes a hash, filters out any falsey values and then interpolates
- * them.
+ * Takes a hash, filters out any falsey values and then returns the result.
  *
  * @param  {Object} $rules
  */
 rules($rules)
-  for $k, $rule in $rules
-    $rules[$k] = rules($rule) if $rule is a 'object'
-    remove($rules, $k) unless $rule
-  {$rules}
+  $filtered = {}
+  for $k,$rule in $rules
+    $rule = rules($rule) if $rule is a 'object'
+    $filtered[$k] = $rule if $rule
+  if mixin isnt 'root'
+    return $filtered
+  {$filtered}
