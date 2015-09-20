@@ -7,7 +7,7 @@ rules($rules)
   $filtered = {}
   for $k,$rule in $rules
     $rule = rules($rule) if $rule is a 'object'
-    $filtered[$k] = $rule if $rule
+    $filtered[$k] = $rule if $rule or $rule is a 'unit'
   if mixin isnt 'root'
     return $filtered
   {$filtered}
