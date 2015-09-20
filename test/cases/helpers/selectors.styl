@@ -1,0 +1,62 @@
+@import 'helpful-ui/helpers/selectors'
+
+{component('single')}
+  display block
+
+  {part('part-1')}
+    display block
+
+    {state('state-1')}
+      display block
+
+    {component('nested-1')}
+      display block
+
+      {part('part-2')}
+        display block
+
+        {modifier('util-1')}
+          display block
+
+          {state('state-2')}
+            display block
+
+            {part('part-3')}
+              display block
+
+    {component('root-by-force', '/')}
+      display block
+
+      {part('part-4')}
+        display block
+
+{component('grouped-1')},
+{component('grouped-2')}
+  display block
+
+  {part('part-5')}
+    display block
+
+    {part('part-6')}
+      display block
+
+      {modifier('util-2')}
+        display block
+
+    {part('part-7', '.root-by-force')}
+      display block
+
+{context('home-page', 'body')}
+  display block
+
+  {component('single')}
+    display block
+
+    {part('part-8')}
+      display block
+
+      {part('part-9')}
+        display block
+
+        {state('state-3')}
+          display block

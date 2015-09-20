@@ -1,0 +1,107 @@
+@require '../globals'
+
+/**
+ * Attempts to find the parent component of the calling element.
+ *
+ * @param  {String} $pattern
+ * @param  {String} $parent
+ * @return {String}
+ */
+-get-last-component($pattern, $parent)
+  unless match('\.', $pattern)
+    $pieces = split(' ', $parent)
+    $last = pop($pieces)
+    $component = replace('^([\w]+)?(\.)?(\S+?)(--|__|\s|::?)(.+)$', '$1$2$3', $last)
+    if $last isnt $component
+      $last = $last + ' ' + $component
+    $parent = join(' ', $pieces, $last)
+  return $parent
+
+/**
+ * Creates the class using the given formatting type, desired name
+ * and the defined parent.
+ *
+ * @param  {String} $type
+ * @param  {String} $name
+ * @param  {String} $parent
+ * @return {String}
+ */
+-format($type, $name, $parent)
+  $pattern = $global.formats[$type] or '%s .%s'
+  if $parent is '&'
+    $parents = ()
+    $parentSelectors = selector()
+    for $parentSel in split(',', $parentSelectors)
+      $parentSel = -get-last-component($pattern, $parentSel)
+      push($parents, s($pattern, unquote($parentSel), unquote($name)))
+    $output = join(',', $parents)
+  else
+    $parent = '' if $parent is '/'
+    $output = s($pattern, unquote($parent), unquote($name))
+  return unquote('/' + $output)
+
+/**
+ * Creates a new component.  By default, components are root
+ * level by default unless told otherwise.
+ *
+ * @param  {String} $name
+ * @param  {Mixed} $prefix
+ */
+component($name, $parent = '&')
+  $sel = -format('component', $name, $parent)
+  if typeof(block) is 'ident'
+    return $sel
+  {$sel}
+    {block}
+
+/**
+ * Creates a new part.
+ *
+ * @param  {String} $name
+ * @param  {Mixed} $parent
+ */
+part($name, $parent = '&')
+  $sel = -format('part', $name, $parent)
+  if typeof(block) is 'ident'
+    return $sel
+  {$sel}
+    {block}
+
+/**
+ * Creates a new modifier.
+ *
+ * @param  {String} $name
+ * @param  {Mixed} $parent
+ */
+modifier($name, $parent = '&')
+  $sel = -format('modifier', $name, $parent)
+  if typeof(block) is 'ident'
+    return $sel
+  {$sel}
+    {block}
+
+/**
+ * Creates a new state.
+ *
+ * @param  {String} $name
+ * @param  {Mixed} $parent
+ */
+state($name, $parent = '&')
+  $sel = -format('state', $name, $parent)
+  if typeof(block) is 'ident'
+    return $sel
+  {$sel}
+    {block}
+
+/**
+ * Creates a new context.
+ *
+ * @param  {String} $name
+ * @param  {Mixed} $parent
+ */
+context($name, $parent = '&')
+  $sel = -format('context', $name, $parent)
+  if typeof(block) is 'ident'
+    return $sel
+  {$sel}
+    {block}
