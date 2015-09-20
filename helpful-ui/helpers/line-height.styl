@@ -1,10 +1,12 @@
+@require '../globals'
+
 /**
  * Converts pixel values to a relative unit for line height.
  *
  * @param  {Number} $size
  * @param  {Number} $base
  */
-line-height($size, $base = $global__size)
+line-height($size, $base = $global.font-size)
   if $size is a 'unit' and unit($size) is 'px'
     $size = remove-unit($size / $base)
   line-height $size
