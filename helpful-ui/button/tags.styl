@@ -1,0 +1,17 @@
+@require 'options'
+@require '../helpers/selectors'
+@require '../helpers/line-height'
+@require '../helpers/rules'
+
+button,
+{component($button.selector)},
+input[type="submit"]
+  rules($button.states.default)
+
+  &:hover,
+  &:focus
+    rules($button.states.hover)
+
+  &:disabled,
+  {state('disabled')}
+    rules($button.states.disabled)
