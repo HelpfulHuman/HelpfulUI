@@ -50,7 +50,7 @@ describe('compilation', function () {
 
       // render the stylus file and assert that it matches the CSS file
       style.render(function (err, actual) {
-        if (err) done(err);
+        if (err) throw err;
         expect(actual.trim()).to.equal(css);
         done();
       });
