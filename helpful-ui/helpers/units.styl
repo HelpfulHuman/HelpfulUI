@@ -76,7 +76,7 @@ px($amount, $base = $global.font-size)
  * @param  {String} $unit
  */
 pref($amount, $base = $global.font-size, $unit = $global.preferred-unit)
-  if $unit
+  if unit($amount) isnt '%'
     if $unit is em
       $amount = em($amount, $base)
     if $unit is rem
