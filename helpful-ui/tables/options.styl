@@ -1,32 +1,55 @@
 @require '../theme'
 
-/**
- * ENABLE
- *
- * Enables or disables the table module and/or features using a simple
- * boolean variable.
- */
-$table__enabled                   ?= true
+$table = merge({
 
-/**
- * ALIGNMENT
- *
- * Use the recommended table alignment which will center all table column
- * values with exception of the first column, which is left aligned, and
- * the last column, which is right aligned.
- */
-$table__use-proper-alignment      ?= true
+  /**
+   * ENABLE
+   *
+   * Enables the module and features when set to "true".
+   */
+  enabled: true
 
-/**
- * STRIPED TABLE
- *
- * Will alternate between the set background and background-alt options
- * to create a striped table style.
- */
-$table__striped                   ?= true
+  /**
+   * STYLES
+   *
+   * The styles for the table and its
+   */
+  styles: {
+    table: {
+      display: table
+      border-collapse: collapse
+      border-spacing: 0
+      border: 0
+      color: inherit
+    }
 
-/**
- * COLORS
- */
-$table__background                ?= transparent
-$table__background-alt            ?= $theme__gray-color-100
+    tr: {
+      display: table-row
+      background: transparent
+    }
+
+    'th, td': {
+      display: table-cell
+      text-align: center
+
+      '&:first-child': {
+        text-align: left
+      }
+
+      '&:last-child': {
+        text-align: right
+      }
+    }
+
+    th: {
+      font-weight: bold
+      vertical-align: bottom
+    }
+
+    td: {
+      font-weight: normal
+      vertical-align: top
+    }
+  }
+
+}, $table)
