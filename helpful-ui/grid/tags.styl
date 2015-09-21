@@ -42,7 +42,6 @@ $_columns = $grid.columns
   for $size in (xs sm md lg xl)
     for $i in 1..$_columns
       {modifier($size + $i)}
-        display block
         if lookup('$_gutter-' + $size) isnt lookup('$_gutter-' + $_prev)
           padding-left pref(lookup('$_gutter-' + $size) / 2)
           padding-right @padding-left
