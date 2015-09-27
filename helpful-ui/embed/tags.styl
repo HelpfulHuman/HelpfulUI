@@ -2,15 +2,15 @@
 @require '../helpers/selectors'
 @require '../helpers/aspect-ratio'
 
-{component($ratio.selector)}
+{component($hui.embed.selector)}
   position relative
   width 100%
   height auto
   aspect-ratio 4 3
 
-  for $name, $size in $ratio.options
-    {modifier($name)}
-      aspect-ratio $size
+  for $_hui-k, $_hui-v in $hui.embed.options
+    {modifier($_hui-k)}
+      aspect-ratio $_hui-v
 
   img, embed, object, video
     position absolute
