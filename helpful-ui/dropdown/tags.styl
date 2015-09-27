@@ -3,36 +3,29 @@
 @require '../helpers/selectors'
 @require '../helpers/rules'
 
-{component($dropdown.selector)}
-  rules($dropdown.states.default)
+{component($hui.dropdown.selector)}
+  for $_hui-k, $_hui-v in $hui.dropdown.variants
+    if $_hui-k is 'default'
+      rules($_hui-v, ('&:disabled' '&:focus'))
 
-  &:hover
-    rules($dropdown.states.hover)
+      {state('focused')}
+        rules($_hui-v['&:focus'])
 
-  &:focus,
-  {state('focused')}
-    rules($dropdown.states.focus)
+      {state('disabled')}
+        rules($_hui-v['&:disabled'])
 
-  {state('disabled')}
-    rules($dropdown.states.disabled)
+    else
+      {modifier($_hui-k)}
+        rules($_hui-v, ('&:disabled' '&:focus'))
+
+        {state('focused')}
+          rules($_hui-v['&:focus'])
+
+        {state('disabled')}
+          rules($_hui-v['&:disabled'])
 
   &:before
-    z-index 1
-    if $dropdown.arrow is 'css'
-      display block
-      position absolute
-      top 50%
-      right 0.75em
-      margin -0.25em 0
-      content ''
-      line-height inherit
-      $_temp = $dropdown.states.default.color
-      border-top solid 0.5em $_temp
-      border-left solid 0.5em transparent
-      border-right @border-left
-      border-bottom 0
-    else
-      rules($dropdown.arrow)
+    rules($hui.dropdown.arrow)
 
   select
     display block

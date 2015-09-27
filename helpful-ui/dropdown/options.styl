@@ -1,8 +1,8 @@
-@require '../theme'
+@require '../config'
 @require '../helpers/units'
 @require '../helpers/line-height'
 
-$dropdown = merge({
+$hui.dropdown = merge({
 
   /**
    * ENABLE
@@ -28,11 +28,14 @@ $dropdown = merge({
   convert-units: true
 
   /**
-   * STYLES
+   * VARIANTS
    *
-   * The styles for the dropdown component.
+   * These are the rules that will be applied for the different variations
+   * of the module.  The "default" variant will be used as the base, whereas
+   * additional variants will be available as "modifiers" matching the related
+   * key name.
    */
-  states: {
+  variants: {
 
     // default state
     default: {
@@ -41,30 +44,30 @@ $dropdown = merge({
       width: 100%
       cursor: pointer
       vertical-align: middle
-      font-size: $theme.control.font-size
+      font-size: $hui.theme.control.font-size
       color: #4e4e4e
-      background: $theme.control.background
-      height: $theme.control.height
-      box-shadow: $theme.control.box-shadow
-      border-style: $theme.control.border-style
-      border-width: $theme.control.border-width
-      border-color: $theme.control.border-color
-      border-radius: $theme.control.border-radius
-    }
+      background: $hui.theme.control.background
+      height: $hui.theme.control.height
+      box-shadow: $hui.theme.control.box-shadow
+      border-style: $hui.theme.control.border-style
+      border-width: $hui.theme.control.border-width
+      border-color: $hui.theme.control.border-color
+      border-radius: $hui.theme.control.border-radius
 
-    // hover state
-    hover: {
-      background: darken($theme.control.border-color, 5%)
-    }
+      // hover state
+      '&:hover': {
+        background: darken($hui.theme.control.border-color, 5%)
+      }
 
-    // focus state
-    focus: {
-      background: darken($theme.control.border-color, 5%)
-    }
+      // focus state
+      '&:focus': {
+        background: darken($hui.theme.control.border-color, 5%)
+      }
 
-    // disabled state
-    disabled: {
-      cursor: not-allowed
+      // disabled state
+      '&:disabled': {
+        cursor: not-allowed
+      }
     }
 
   }
@@ -74,13 +77,26 @@ $dropdown = merge({
    *
    * The dropdown arrow on the right hand side.
    */
-  arrow: 'css'
+  arrow: {
+    display: block
+    position: absolute
+    top: 50%
+    right: 0.75em
+    margin: -0.25em 0
+    content: ''
+    line-height: inherit
+    border-top: unquote('solid 0.5em @color')
+    border-left: solid 0.5em transparent
+    border-right: unquote('@border-left')
+    border-bottom: 0
+    z-index: 1
+  }
 
-}, $dropdown)
+}, $hui.dropdown)
 
 // run any recommended conversions...
-if $dropdown.convert-units
-  $dropdown.states.default.height = pref($dropdown.states.default.height, $dropdown.states.default.font-size)
+if $hui.dropdown.convert-units
+  $hui.dropdown.variants.default.height = pref($hui.dropdown.variants.default.height, $hui.dropdown.variants.default.font-size)
 
-  if $dropdown.states.default.font-size is $global.font-size
-    remove($dropdown.states.default, 'font-size')
+  if $hui.dropdown.variants.default.font-size is $hui.font-size
+    remove($hui.dropdown.variants.default, 'font-size')
