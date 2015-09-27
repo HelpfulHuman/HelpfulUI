@@ -1,0 +1,24 @@
+@require '../icons/options'
+
+/**
+ * Looks through the default or specified icon sets and attempts
+ * to add a "content" tag matching the given icon glyph name.
+ *
+ * @param  {String} $set
+ * @param  {String} $glyph
+ */
+icon()
+  if length(arguments) is 2
+    $set = arguments[0]
+    $glyph = arguments[1]
+  else
+    $set = $hui.icons.default
+    $glyph = arguments[0]
+
+  unless $hui.icons.sets[$set]
+    error('Failed to find icon set: ' + $set)
+
+  unless $hui.icons.sets[$set].glyphs[$glyph]
+    error('Failed to find icon glyph: ' + $gylph)
+
+  content: $hui.icons.sets[$set].glyphs[$glyph]
