@@ -1,12 +1,7 @@
-@require '../globals'
-
 /**
  * Adds the before and after selectors needed for the clearfix hack.
  */
 clearfix()
-  if $global__ie-support
-    zoom 1
-
   &:before,
   &:after
     content " "
@@ -16,7 +11,7 @@ clearfix()
     clear both
 
 /**
- * Enables new rule values like "children" to be used.
+ * Replaces "clear: children" with a clearfix.
  */
 clear()
   if arguments[0] is children
