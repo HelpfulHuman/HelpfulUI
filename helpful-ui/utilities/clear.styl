@@ -1,4 +1,5 @@
 @require '../helpers/clear'
+@require '../helpers/selectors'
 
 /**
  * Self clears floating child elements (clearfix).
@@ -9,8 +10,8 @@
  *   <div style="float:left;"></div>
  * </div>
  */
-.\\+cf,
-.\\+clear
+{modifier('cf')},
+{modifier('clear')}
   clear children
 
 /**
@@ -22,7 +23,7 @@
  *   <div style="float:left;"></div>
  * </div>
  */
-.\\+cl
+{modifier('cl')}
   clear left
 
 /**
@@ -34,5 +35,5 @@
  *   <div style="float:right;"></div>
  * </div>
  */
-.\\+cr
+{modifier('cr')}
   clear right

@@ -16,7 +16,6 @@
 .dropdown:hover {
   background: #e2e2e2;
 }
-.dropdown:focus,
 .dropdown.is-focused {
   background: #e2e2e2;
 }
@@ -24,7 +23,6 @@
   cursor: not-allowed;
 }
 .dropdown:before {
-  z-index: 1;
   display: block;
   position: absolute;
   top: 50%;
@@ -36,6 +34,7 @@
   border-left: solid 0.5em transparent;
   border-right: solid 0.5em transparent;
   border-bottom: 0;
+  z-index: 1;
 }
 .dropdown select {
   display: block;

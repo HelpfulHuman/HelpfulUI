@@ -2,25 +2,25 @@
 @require '../helpers/rules'
 
 body
-  rules($typography.body)
+  rules($hui.typography.body)
 
 ::selection
-  rules($typography.selection)
+  rules($hui.typography.selection)
 
 a
-  rules($typography.links)
+  rules($hui.typography.links)
 
 p
-  rules($typography.paragraph)
+  rules($hui.typography.paragraph)
 
 ol, ul
-  rules($typography.lists.default)
+  rules($hui.typography.lists.default)
 
 ol
-  rules($typography.lists.ol)
+  rules($hui.typography.lists.ol)
 
 ul
-  rules($typography.lists.ul)
+  rules($hui.typography.lists.ul)
 
 h1, .h1,
 h2, .h2,
@@ -28,20 +28,20 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6
-  rules($typography.headings.default)
+  rules($hui.typography.headings.default)
 
 for i in 1..6
   h{i},.h{i}
-    rules($typography.headings['h' + i])
+    rules($hui.typography.headings['h' + i])
 
 hr
-  rules($typography.hr)
+  rules($hui.typography.hr)
 
 pre, code, kbd, samp
-  rules($typography.code)
+  rules($hui.typography.code)
 
 pre
-  rules($typography.pre)
+  rules($hui.typography.pre)
 
 small
   font-size 85%
@@ -67,7 +67,7 @@ del
   text-decoration line-through
 
 abbr[title], dfn[title]
-  rules($typography.definitions)
+  rules($hui.typography.definitions)
 
 q, blockquote
   quotes none
