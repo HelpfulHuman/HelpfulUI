@@ -8,3 +8,7 @@
   one: working;
   three: a b c d;
 }
+.foo:hover {
+  color: #f00;
+  content: '';
+}
