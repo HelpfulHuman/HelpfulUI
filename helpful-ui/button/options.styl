@@ -1,7 +1,7 @@
-@require '../theme'
+@require '../config'
 @require '../helpers/units'
 
-$button = merge({
+$hui.button = merge({
 
   /**
    * ENABLE
@@ -27,11 +27,14 @@ $button = merge({
   convert-units: true
 
   /**
-   * STATE STYLES
+   * VARIANTS
    *
-   * These are rules that will be applied to each of the button states.
+   * These are the rules that will be applied for the different variations
+   * of the module.  The "default" variant will be used as the base, whereas
+   * additional variants will be available as "modifiers" matching the related
+   * key name.
    */
-  states: {
+  variants: {
 
     // default button state
     default: {
@@ -39,43 +42,43 @@ $button = merge({
       margin: 0
       padding: 0 1em
       width: 100%
-      height: $theme.control.height
+      height: $hui.theme.control.height
       line-height: false
       cursor: pointer
       user-select: none
       overflow: ellipsis
       text-align: center
       vertical-align: middle
-      font-size: $theme.control.font-size
+      font-size: $hui.theme.control.font-size
       font-style: inherit
       font-weight: inherit
-      border-radius: $theme.control.border-radius
-      box-shadow: $theme.control.box-shadow
+      border-radius: $hui.theme.control.border-radius
+      box-shadow: $hui.theme.control.box-shadow
       border: none
-    }
 
-    // hover state
-    hover: {
-      text-decoration: none
-    }
+      // hover state
+      '&:hover': {
+        text-decoration: none
+      }
 
-    focus: {
-      outline: 0
-    }
+      '&:focus': {
+        outline: 0
+      }
 
-    // disabled state
-    disabled: {
-      cursor: not-allowed
+      // disabled state
+      '&:disabled': {
+        cursor: not-allowed
+      }
     }
 
   }
 
-}, $button)
+}, $hui.button)
 
 // run any recommended conversions...
-if $button.convert-units
-  $button.states.default.line-height = $button.states.default.height $button.states.default.font-size
-  $button.states.default.height = pref($button.states.default.height, $button.states.default.font-size)
+if $hui.button.convert-units
+  $hui.button.variants.default.line-height = $hui.button.variants.default.height $hui.button.variants.default.font-size
+  $hui.button.variants.default.height = pref($hui.button.variants.default.height, $hui.button.variants.default.font-size)
 
-  if $button.states.default.font-size is $global.font-size
-    remove($button.states.default, 'font-size')
+  if $hui.button.variants.default.font-size is $hui.font-size
+    remove($hui.button.variants.default, 'font-size')

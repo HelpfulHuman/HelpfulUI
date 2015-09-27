@@ -4,16 +4,14 @@
 @require '../helpers/rules'
 
 button,
-{component($button.selector)},
+{component($hui.button.selector)},
 input[type="submit"]
-  rules($button.states.default)
+  for $_hui-k, $_hui-v in $hui.button.variants
+    if $_hui-k is 'default'
+      rules($_hui-v)
+    else
+      {modifier($_hui-k)}
+        rules($_hui-v)
 
-  &:hover
-    rules($button.states.hover)
-
-  &:focus
-    rules($button.states.focus)
-
-  &:disabled,
   {state('disabled')}
-    rules($button.states.disabled)
+    @extend button:disabled
