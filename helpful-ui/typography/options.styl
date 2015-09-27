@@ -1,8 +1,8 @@
-@require '../theme'
+@require '../config'
 @require '../helpers/line-height'
 @require '../helpers/units'
 
-$typography = merge({
+$hui.typography = merge({
 
   /**
    * ENABLE
@@ -18,9 +18,9 @@ $typography = merge({
    * will be handled automatically in the classes file.
    */
   body: {
-    color: darken($theme.colors.gray.mid, 8%)
+    color: darken($hui.colors.gray.mid, 8%)
     background: #fff
-    font-family: $theme.fonts.primary
+    font-family: $hui.fonts.primary
     font-weight: normal
     font-style: normal
     line-height: 1.45
@@ -36,8 +36,8 @@ $typography = merge({
   headings: {
 
     default: {
-      color: $theme.colors.gray.dark
-      font-family: $theme.fonts.headings
+      color: $hui.colors.gray.dark
+      font-family: $hui.fonts.headings
       font-weight: bold
       font-style: normal
       line-height: 1.25
@@ -109,7 +109,7 @@ $typography = merge({
     vertical-align: baseline
     text-decoration: none
     cursor: pointer
-    color: $theme.colors.primary.mid
+    color: $hui.colors.primary.mid
   }
 
   /**
@@ -119,7 +119,7 @@ $typography = merge({
    * and <kbd>
    */
   code: {
-    font-family: $theme.fonts.code
+    font-family: $hui.fonts.code
   }
 
   /**
@@ -145,7 +145,7 @@ $typography = merge({
    padding: 0
    border: 0
    height: 1px
-   background: $theme.colors.gray.light
+   background: $hui.colors.gray.light
  }
 
   /**
@@ -155,7 +155,7 @@ $typography = merge({
    */
   selection: {
     color: #fff
-    background: alpha($theme.colors.primary.mid, 0.86)
+    background: alpha($hui.colors.primary.mid, 0.86)
     text-shadow: none
   }
 

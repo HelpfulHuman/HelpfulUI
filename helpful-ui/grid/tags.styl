@@ -4,11 +4,11 @@
 @require '../helpers/selectors'
 @require '../helpers/rules'
 
-$_gutter-xs = $grid.gutter-size.xs
-$_gutter-sm = $grid.gutter-size.sm
-$_gutter-md = $grid.gutter-size.md
-$_gutter-lg = $grid.gutter-size.lg
-$_gutter-xl = $grid.gutter-size.xl
+$_gutter-xs = $hui.grid.gutter-size.xs
+$_gutter-sm = $hui.grid.gutter-size.sm
+$_gutter-md = $hui.grid.gutter-size.md
+$_gutter-lg = $hui.grid.gutter-size.lg
+$_gutter-xl = $hui.grid.gutter-size.xl
 
 $_media-xs = $hui.breakpoints.xs
 $_media-sm = $hui.breakpoints.sm
@@ -16,9 +16,9 @@ $_media-md = $hui.breakpoints.md
 $_media-lg = $hui.breakpoints.lg
 $_media-xl = $hui.breakpoints.xl
 
-$_columns = $grid.columns
+$_columns = $hui.grid.columns
 
-{component($grid.grid-selector)}
+{component($hui.grid.grid-selector)}
   margin-left pref(-1 * ($_gutter-xs / 2))
   margin-right @margin-left
   clear children
@@ -32,7 +32,7 @@ $_columns = $grid.columns
         margin-right @margin-left
     $_prev = $size
 
-{component($grid.column-selector)}
+{component($hui.grid.column-selector)}
   float left
   display block
   width 100%

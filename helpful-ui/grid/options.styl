@@ -1,6 +1,6 @@
 @require '../config'
 
-$grid = merge({
+$hui.grid = merge({
 
   /**
    * ENABLE
@@ -39,15 +39,15 @@ $grid = merge({
     default: 30px
   }
 
-}, $grid)
+}, $hui.grid)
 
 /**
  * Generate multiple gutter sizes based on breakpoints.
  */
-$grid.gutter-size = merge({
+$hui.grid.gutter-size = merge({
   xs: $grid.gutter-size.default / 3
   sm: $grid.gutter-size.default / 2
   md: $grid.gutter-size.default
   lg: $grid.gutter-size.default
   xl: $grid.gutter-size.default
-}, $grid.gutter-size)
+}, $hui.grid.gutter-size)
