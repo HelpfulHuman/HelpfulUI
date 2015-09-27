@@ -12,7 +12,7 @@ HTML5 Boilerplate         -> http://html5boilerplate.com
 
 */
 
-@require '../theme'
+@require '../config'
 @require '../helpers/resets'
 
 *,
@@ -83,7 +83,7 @@ if $global__enforce-height
 http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 html
   box-sizing border-box
-  if $global__enforce-scroll-bar
+  if $hui.enforce-scroll-bar
     overflow-y scroll
 
 nav
