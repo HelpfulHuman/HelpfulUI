@@ -1,5 +1,7 @@
 ## Introduction
 
+![Build Status](https://travis-ci.org/HelpfulHuman/HelpfulUI.svg)
+
 **Helpful UI** is a specification for creating clean and predictable HTML and CSS.  The goal is to set standards that can be used across multiple projects to make it easier for developers to collaborate efficiently.
 
 This project is heavily inspired by standards like [CSStyle](http://csstyle.io) and [SMACSS](https://smacss.com/) and the [nib](http://tj.github.io/nib/) stylus framework.
