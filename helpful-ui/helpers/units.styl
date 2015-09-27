@@ -1,4 +1,4 @@
-@require '../globals'
+@require '../config'
 
 /**
  * Converts px, rem and % values to "em".  Optionally takes a second
@@ -8,7 +8,7 @@
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-em($amount, $base = $global.font-size)
+em($amount, $base = $hui.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'px'
       $amount = unit($amount / $base, 'em')
@@ -26,7 +26,7 @@ em($amount, $base = $global.font-size)
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-rem($amount, $base = $global.font-size)
+rem($amount, $base = $hui.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'px'
       $amount = unit($amount / $base, 'rem')
@@ -44,7 +44,7 @@ rem($amount, $base = $global.font-size)
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-percent($amount, $base = $global.font-size)
+percent($amount, $base = $hui.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'px'
       $amount = unit(($amount / $base) * 100, '%')
@@ -59,7 +59,7 @@ percent($amount, $base = $global.font-size)
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-px($amount, $base = $global.font-size)
+px($amount, $base = $hui.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'em' or unit($amount) is 'rem'
       $amount = unit($amount * $base, 'px')
@@ -75,7 +75,7 @@ px($amount, $base = $global.font-size)
  * @param  {Number} $base
  * @param  {String} $unit
  */
-pref($amount, $base = $global.font-size, $unit = $global.preferred-unit)
+pref($amount, $base = $hui.font-size, $unit = $hui.preferred-unit)
   if unit($amount) isnt '%'
     if $unit is em
       $amount = em($amount, $base)

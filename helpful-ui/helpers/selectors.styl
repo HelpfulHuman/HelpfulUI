@@ -1,4 +1,4 @@
-@require '../globals'
+@require '../config'
 
 /**
  * Attempts to find the parent component of the calling element.
@@ -27,7 +27,7 @@
  * @return {String}
  */
 -format($type, $name, $parent)
-  $pattern = $global.formats[$type] or '%s .%s'
+  $pattern = $hui.formats[$type] or '%s .%s'
   if $parent is '&'
     $parents = ()
     $parentSelectors = selector()
