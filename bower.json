@@ -4,7 +4,10 @@
   "authors": [
     "Nick Glenn <nick@helpfulhuman.com>"
   ],
-  "main": "main.css",
+  "main": [
+    "index.styl",
+    "index.css"
+  ],
   "description": "Open standard for writing stylesheets and CSS/Stylus framework.",
   "keywords": [
     "ui",
