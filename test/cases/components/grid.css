@@ -1,7 +1,6 @@
 .grid {
   margin-left: -0.3125em;
   margin-right: -0.3125em;
-  zoom: 1;
 }
 .grid:before,
 .grid:after {
