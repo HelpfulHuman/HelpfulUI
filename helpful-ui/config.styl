@@ -31,20 +31,6 @@ $hui = merge({
    */
   enforce-scroll-bar: true
 
-  /*
-   * IE SUPPORT
-   *
-   * Whether or not IE (8+) should specifically be supported.
-   */
-  ie-support: true
-
-  /*
-   * VENDOR PREFIXES
-   *
-   * What vendor prefixes will be applied to vendor helper functions.
-   */
-  vendor-prefixes: webkit moz o ms official
-
   /**
    * PREFERRED UNIT TYPE
    *
@@ -82,29 +68,6 @@ $hui = merge({
   }
 
   /**
-   * COLORS
-   */
-  colors: {
-    gray: {
-      light: #EEE
-      mid: #555
-      dark: #222
-    }
-    primary: {
-      mid: #673AB7
-    }
-    accent: {
-      mid: false
-    }
-    success: {
-      mid: #8BC34A
-    }
-    error: {
-      mid: #F44336
-    }
-  }
-
-  /**
    * FONTS
    *
    * These are the fonts which will be used by the other modules.
@@ -116,38 +79,3 @@ $hui = merge({
   }
 
 }, $hui)
-
-/**
- * SHARED CONTROL SETTINGS
- *
- * These are settings related to control elements like inputs, textareas
- * and buttons.
- */
-$hui.control = merge({
-  font-size: $hui.font-size
-  height: 32px
-  background: #fff
-  color: inherit
-  border-style: solid
-  border-width: 1px
-  border-color: #EEE
-  border-radius: 2px
-  box-shadow: none
-}, $hui.control)
-
-/**
- * If no accent color has been defined, make one using Stylus'
- * "complement()" method
- */
-unless $hui.colors.accent.mid
-  $hui.colors.accent.mid = complement($hui.colors.primary.mid)
-
-/**
- * If light and dark color ranges haven't been explicitly set, generate some
- * nice alternatives.
- */
-for $_hui-k, $_hui-v in $hui.colors
-  unless $_hui-v.light
-    $_hui-v.light = lighten($_hui-v.mid, 40%)
-  unless $_hui-v.dark
-    $_hui-v.dark = darken($_hui-v.mid, 40%)
