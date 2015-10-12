@@ -2,12 +2,13 @@ var gulp = require('gulp');
 var del = require('del');
 var browsersync = require('browser-sync');
 var plugins = require('gulp-load-plugins')();
+var notifierReporter = require('mocha-notifier-reporter');
 
 /**
- * STYLES:COMPILE
+ * BOWER:STYLES
  * Compile Stylus files, apply vendor prefixes and minify stylesheets.
  */
-gulp.task('styles', function () {
+gulp.task('bower:styles', function () {
   return gulp.src('./*.styl')
     .pipe(plugins.plumber())
     .pipe(plugins.stylus())
@@ -21,7 +22,7 @@ gulp.task('styles', function () {
  * BUILD
  * Run all compilation tasks.
  */
-gulp.task('build', ['styles']);
+gulp.task('build', ['bower']);
 
 /**
  * WATCH
@@ -40,7 +41,7 @@ gulp.task('test', function () {
   return gulp
     .src('test/runner.js', {read: false})
     .pipe(plugins.mocha({
-      reporter: 'spec',
+      reporter: notifierReporter.decorate('spec'),
       ignoreLeaks: true,
       growl: true
     }));

@@ -1,6 +1,6 @@
 {
   "name": "helpful-ui",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0",
   "description": "Open standard for writing stylesheets and CSS/Stylus framework.",
   "main": "./helpful-ui.js",
   "dependencies": {
@@ -19,7 +19,8 @@
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.0.3",
-    "mocha": "^2.3.2"
+    "mocha": "^2.3.2",
+    "mocha-notifier-reporter": "^0.1.1"
   },
   "scripts": {
     "test": "mocha"

@@ -1,0 +1,81 @@
+/**
+ * "Globals" are configuration settings that are not specific to any
+ * one module and can therefore safely be used by any module.
+ *
+ * -------------------------------------------------------------------
+ */
+
+$hui = merge({
+
+  /**
+   * GLOBAL BASE SIZE
+   *
+   * This is the default sizes that other sizes will by divided by
+   * to find the correct EM.
+   */
+  font-size: 16px
+
+  /**
+   * ENFORCE HEIGHT
+   *
+   * If you want to be able to use 100% on the window size, set this
+   * to true.
+   */
+  enforce-height: true
+
+  /**
+   * ENFORCE SCROLL BAR
+   *
+   * Forces a vertical scroll bar be added to help prevent the page from
+   * being jumpy when page height dynamically change.
+   */
+  enforce-scroll-bar: true
+
+  /**
+   * PREFERRED UNIT TYPE
+   *
+   * Through the use of transparent rule functions, an attempt to convert
+   * the given units to the preferred type automatically. Simply set this
+   * to false to disable or choose one of the following: px, em, rem
+   */
+  preferred-unit: em
+
+  /**
+   * SELECTOR FORMATS
+   *
+   * The formatting rules for the different types of selectors.  Set to
+   * match Helpful UI's standard by default.
+   */
+  formats: {
+    component: '%s .%s'
+    part: '%s__%s'
+    modifier: '%s.\+%s'
+    state: '%s.is-%s'
+    context: '%s.as-%s'
+  }
+
+  /**
+   * MEDIA QUERY SIZES
+   *
+   * The media query breakpoints
+   */
+  breakpoints: {
+    xs: unit(320px / 16, 'em')
+    sm: unit(480px / 16, 'em')
+    md: unit(768px / 16, 'em')
+    lg: unit(1024px / 16, 'em')
+    xl: unit(1146px / 16, 'em')
+  }
+
+  /**
+   * FONTS
+   *
+   * These are the fonts which will be used by the other modules.
+   */
+  fonts: {
+    primary: unquote("'Helvetica Neue', Arial, sans-serif")
+    headings: inherit
+    code: unquote("'Monaco', Courier New, monospace")
+  }
+
+}, $hui)
