@@ -1,6 +1,6 @@
 {
   "name": "helpful-ui",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0",
   "description": "Open standard for writing stylesheets and CSS/Stylus framework.",
   "main": "./helpful-ui.js",
   "dependencies": {
