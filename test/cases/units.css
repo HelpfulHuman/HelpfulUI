@@ -37,12 +37,6 @@
 .units-px3 {
   font-size: 60px;
 }
-.units-pref1 {
-  font-size: 1em;
-}
-.units-pref2 {
-  font-size: 2em;
-}
 .units-strip-zeros {
   border: solid 0 #f00 3px;
 }
