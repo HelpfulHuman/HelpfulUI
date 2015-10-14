@@ -65,24 +65,6 @@ px($amount, $base = $hui.font-size)
   return $amount
 
 /**
- * Checks the global "preferred-unit" option and will attempt to convert
- * the given units accordingly.
- *
- * @param  {Number} $amount
- * @param  {Number} $base
- * @param  {String} $unit
- */
-pref($amount, $base = $hui.font-size, $unit = $hui.preferred-unit)
-  if unit($amount) isnt '%'
-    if $unit is em
-      $amount = em($amount, $base)
-    if $unit is rem
-      $amount = rem($amount, $base)
-    if $unit is px
-      $amount = px($amount, $base)
-  return $amount
-
-/**
  * Strips the unit off of 0 values.
  *
  * @return {Array}
