@@ -4,11 +4,11 @@
 clearfix()
   &:before,
   &:after
-    content " "
-    display table
+    content: " "
+    display: table
 
   &:after
-    clear both
+    clear: both
 
 /**
  * Replaces "clear: children" with a clearfix.
@@ -17,4 +17,4 @@ clear()
   if unquote(arguments[0]) is children
     clearfix()
   else
-    clear arguments
+    clear: arguments
