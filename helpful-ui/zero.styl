@@ -1,0 +1,319 @@
+@require './'
+
+/*
+Helpful UI - Zero (Normalization)
+
+Inspired by...
+
+Eric Meyer                -> http://meyerweb.com
+HTML5 Doctor              -> http://html5doctor.com
+HTML5 Boilerplate         -> http://html5boilerplate.com
+Normalize CSS             -> https://necolas.github.io/normalize.css/
+*/
+
+/**
+ * Enforce border-box in place of the default "content-box" box-sizing
+ * method.  It's much easier to make calculations subtracting padding and
+ * border from a set width/height then to do the match the other way around.
+ */
+
+html
+  box-sizing: border-box
+
+*,
+*:before,
+*:after
+  box-sizing: border-box
+
+/**
+ * HTML5 Resets
+ */
+ article, aside, figure, footer, header, nav,
+ section, details, summary
+   display: block
+
+[hidden],
+template
+  display: none
+
+/**
+ * Enforce some classic box rules.
+ */
+ html, body, body div, span, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ abbr, address, cite, code, del, dfn, em, img,
+ ins, kbd, q, samp, small, strong, sub, sup, var,
+ b, i, dl, dt, dd, ol, ul, li, fieldset, form,
+ label, legend, table, caption, tbody, tfoot, thead,
+ tr, th, td, article, aside, figure, footer, header,
+ menu, nav, section, time, mark, audio, video,
+ details, summary
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+
+/**
+ * Set font size to whatever has been specified as the root font
+ * size and "hide" iOS' tap highlighting.  If the user has specified
+ * that they would like to enforce a vertical scroll bar to combat
+ * "jumping" window positions, then we'll take care of that here as well.
+ */
+html
+  font-size: px($hui.base.font-size)
+  -webkit-tap-highlight-color: alpha(#fff, 100%)
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+  overflow-y: scroll if $hui.enforce-scroll-bar
+
+/**
+ * Height setting is important if you want to have elements that can
+ * take up the entire vertical portion of a window.
+ */
+if $hui.enforce-height
+  html,
+  body
+    min-height: 100%
+    height: 100%
+
+/**
+ * Reset the typography of our <body> tag.
+ */
+body
+  font-size: 100% // reset to <html>
+  font-family: $hui.fonts.primary
+  font-weight: normal
+  font-style: normal
+  line-height: $hui.base.line-height
+  color: $hui.colors.body-text
+  background: $hui.colors.body-bg
+
+/**
+ * We're going to apply some sensible defaults for common typographic
+ * elements.  The main goal here is that these are the root styles that are
+ * always used.
+ */
+
+// Headings
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+  margin-bottom: rem($hui.base.content-margin)
+  font-family: $hui.fonts.headings
+
+// Standard content blocks
+p, ul, ol, dl, blockquote, figure, pre, hr
+  margin-top: $hui.base.content-margin
+  margin-bottom: @margin-top
+
+ul, ol
+  ul, ol
+    margin-top: 0
+    margin-bottom: 0
+
+dt
+  font-weight: bold
+
+dd
+  margin-bottom: 0.5em
+  margin-left: 0
+
+nav
+  ol, ul
+    list-style: none
+
+blockquote
+  & > *:first-child
+    margin-top: 0
+
+  & > *:last-child
+    margin-bottom: 0
+
+// Basic styling elements
+b, strong
+  font-weight: bold
+
+i, em, dfn
+  font-style: italic
+
+small
+  font-size: 80%
+
+sub,
+sup
+  position: relative
+  font-size: 75%
+  line-height: 0
+  vertical-align: baseline
+
+sup
+  top: -0.5em
+
+sub
+  bottom: -0.25em
+
+// Abbreviations and acronyms
+abbr[title]
+  cursor: help
+  border-bottom: dotted 1px
+
+address
+  margin-bottom: em($hui.base.content-margin)
+  font-style: normal
+  line-height: inherit
+
+// Code
+pre, code, kbd, samp
+  font-size: 1em
+  font-family: $hui.fonts.code
+
+pre
+  overflow: auto
+
+// Links
+a
+  color: $hui.colors.links
+  background: transparent
+
+  &:hover,
+  &:active,
+  &:focus
+    outline: 0
+
+/**
+ * Now let's do some normalization on embedded media like images,
+ * embeds, iframes and videos.
+ */
+img
+  display: inline-block
+  vertical-align: middle
+  max-width: 100%
+  height: auto
+  border: 0
+
+audio,
+canvas,
+progress,
+video
+  display: inline-block
+  vertical-align: baseline
+
+audio:not([controls])
+  display: none
+  height: 0
+
+svg:not(:root)
+  overflow: hidden
+
+/**
+ * It's actually pretty easy to get form controls looking 100% better
+ * than the defaults while still allowing plenty of room for further
+ * customization.  That's the intention here.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea
+  margin: 0
+  font: inherit
+
+input,
+select,
+button,
+textarea
+  margin: 0
+  font-family: $hui.controls.font-family
+  font-size: $hui.controls.font-size
+  color: $hui.controls.color
+  background: $hui.controls.background
+  border-radius: $hui.controls.border-radius
+  box-sizing: inherit
+  text-transform: none
+
+  &,
+  &:focus
+    outline: 0
+
+input,
+select
+  line-height: normal
+
+input,
+select,
+textarea
+  border-style: solid
+  border-width: $hui.controls.border-width
+  border-color: $hui.controls.border-color
+  -webkit-appearance: none
+
+input,
+select,
+button
+  padding: 0 ($hui.controls.padding[1] or $hui.controls.padding[0])
+  height: $hui.controls.height
+  vertical-align: middle
+
+textarea
+  line-height: $hui.controls.line-height
+  padding: $hui.controls.padding
+  resize: vertical
+
+button,
+input[type="button"]
+  line-height: $hui.controls.height
+  border: 0
+  if $hui.controls.hide-overflow
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+  else
+    overflow: visible
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+  -webkit-appearance: button
+  cursor: pointer
+
+button[disabled],
+input[disabled]
+  cursor: default
+
+button::-moz-focus-inner,
+input::-moz-focus-inner
+  border: 0
+  padding: 0
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button
+  height: auto
+
+fieldset
+  margin: 0
+  padding: 0
+  min-width: 0
+  border: 0
+
+legend
+  display: block
+  margin: 0.5em 0
+  padding: 0
+  border: 0
+  width: auto
+  font-size: 1.5em
+  line-height: inherit
+
+/**
+ * Finally, let's get our tables to act the way we want them to.
+ */
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+  font: inherit
+
+td,
+th
+  padding: 0

@@ -1,12 +1,11 @@
 {
   "name": "helpful-ui",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0",
   "authors": [
     "Nick Glenn <nick@helpfulhuman.com>"
   ],
   "main": [
-    "index.styl",
-    "index.css"
+    "index.styl"
   ],
   "description": "Open standard for writing stylesheets and CSS/Stylus framework.",
   "keywords": [

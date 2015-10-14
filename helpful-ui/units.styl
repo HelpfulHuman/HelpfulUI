@@ -7,7 +7,7 @@
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-em($amount, $base = $hui.font-size)
+em($amount, $base = $hui.base.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'px'
       $amount = unit($amount / $base, 'em')
@@ -24,7 +24,7 @@ em($amount, $base = $hui.font-size)
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-rem($amount, $base = $hui.font-size)
+rem($amount, $base = $hui.base.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'px'
       $amount = unit($amount / $base, 'rem')
@@ -41,7 +41,7 @@ rem($amount, $base = $hui.font-size)
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-percent($amount, $base = $hui.font-size)
+percent($amount, $base = $hui.base.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'px'
       $amount = unit(($amount / $base) * 100, '%')
@@ -56,30 +56,12 @@ percent($amount, $base = $hui.font-size)
  * @param  {Number} $amount
  * @param  {Number} $base
  */
-px($amount, $base = $hui.font-size)
+px($amount, $base = $hui.base.font-size)
   if $amount is a 'unit'
     if unit($amount) is 'em' or unit($amount) is 'rem'
       $amount = unit($amount * $base, 'px')
     else if unit($amount) is '%'
       $amount = unit(($amount / 100) * $base, 'px')
-  return $amount
-
-/**
- * Checks the global "preferred-unit" option and will attempt to convert
- * the given units accordingly.
- *
- * @param  {Number} $amount
- * @param  {Number} $base
- * @param  {String} $unit
- */
-pref($amount, $base = $hui.font-size, $unit = $hui.preferred-unit)
-  if unit($amount) isnt '%'
-    if $unit is em
-      $amount = em($amount, $base)
-    if $unit is rem
-      $amount = rem($amount, $base)
-    if $unit is px
-      $amount = px($amount, $base)
   return $amount
 
 /**

@@ -8,14 +8,6 @@
 $hui = merge({
 
   /**
-   * GLOBAL BASE SIZE
-   *
-   * This is the default sizes that other sizes will by divided by
-   * to find the correct EM.
-   */
-  font-size: 16px
-
-  /**
    * ENFORCE HEIGHT
    *
    * If you want to be able to use 100% on the window size, set this
@@ -32,15 +24,6 @@ $hui = merge({
   enforce-scroll-bar: true
 
   /**
-   * PREFERRED UNIT TYPE
-   *
-   * Through the use of transparent rule functions, an attempt to convert
-   * the given units to the preferred type automatically. Simply set this
-   * to false to disable or choose one of the following: px, em, rem
-   */
-  preferred-unit: em
-
-  /**
    * SELECTOR FORMATS
    *
    * The formatting rules for the different types of selectors.  Set to
@@ -55,16 +38,17 @@ $hui = merge({
   }
 
   /**
-   * MEDIA QUERY SIZES
+   * BASE
    *
-   * The media query breakpoints
+   * These are the base settings used for calculating font sizes and
+   * defining the rules for tags like <html> and <body>.
    */
-  breakpoints: {
-    xs: unit(320px / 16, 'em')
-    sm: unit(480px / 16, 'em')
-    md: unit(768px / 16, 'em')
-    lg: unit(1024px / 16, 'em')
-    xl: unit(1146px / 16, 'em')
+  base: {
+    font-size: 16px
+    line-height: 1.45
+    font-weight: normal
+    font-style: normal
+    content-margin: 1.5em
   }
 
   /**
@@ -77,5 +61,38 @@ $hui = merge({
     headings: inherit
     code: unquote("'Monaco', Courier New, monospace")
   }
+
+  /**
+   * COLORS
+   *
+   * Contains color codes that can be used by Zero, future plugins or
+   * your own components.
+   */
+  colors: {
+    body-text: #454545
+    body-bg: #fff
+    headings: #333
+    links: #3498DB
+  }
+
+  /**
+   * CONTROLS
+   *
+   * These are settings shared across all form controls to help enforce
+   * a uniform style.
+   */
+  controls: {
+    padding: 0.75em 1em
+    font-family: inherit
+    font-size: inherit
+    height: 2.5em
+    line-height: inherit
+    color: inherit
+    border-color: #ccc
+    border-width: 1px
+    border-radius: 3px
+    hide-overflow: true
+  }
+
 
 }, $hui)
