@@ -22,7 +22,7 @@ gulp.task('bower:styles', function () {
  * BUILD
  * Run all compilation tasks.
  */
-gulp.task('build', ['bower']);
+gulp.task('build', ['bower:styles']);
 
 /**
  * WATCH

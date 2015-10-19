@@ -1,3 +1,5 @@
+@require 'deep-merge'
+
 /**
  * "Globals" are configuration settings that are not specific to any
  * one module and can therefore safely be used by any module.
@@ -5,7 +7,7 @@
  * -------------------------------------------------------------------
  */
 
-$hui = merge({
+$hui = deepMerge({
 
   /**
    * ENFORCE HEIGHT
