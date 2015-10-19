@@ -1,0 +1,32 @@
+@import 'helpful-ui/deep-merge'
+
+$a = {
+  foo: false
+  bar: {
+    baz: #ccc
+    bah: solid 1px #f00
+    bak: {
+      bag: true
+      ban: 40em
+    }
+  }
+}
+
+$b = {
+  foo: true
+  bar: {
+    baz: #eee
+    bak: {
+      bag: false
+    }
+  }
+}
+
+// $foo = ($a $b)
+
+// $c = deepMerge($a, $b)
+$c = deepMerge($a, $b)
+// $c = deepMerge('string1' 'string2')
+
+.deep-merge
+  {$c}
