@@ -9,12 +9,12 @@
  */
 -get-last-component($pattern, $parent)
   unless match('\.', $pattern)
-    $pieces = split(' ', $parent)
-    $last = pop($pieces)
-    $component = replace('^([\w]+)?(\.)?(\S+?)(--|__|\s|::?)(.+)$', '$1$2$3', $last)
+    $parents = split(' ', $parent)
+    $last = pop($parents)
+    $component = replace('^([\w]+)?(\.)?(\S+?)(--|__|\.|::?)(.*)?$', '$1$2$3', $last)
     if $last isnt $component
       $last = $last + ' ' + $component
-    $parent = join(' ', $pieces, $last)
+    $parent = join(' ', $parents, $last)
   return $parent
 
 /**
