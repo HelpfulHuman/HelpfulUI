@@ -62,3 +62,6 @@ body.as-home-page .single__part-8 .single__part-9 {
 body.as-home-page .single__part-8 .single__part-9.is-state-3 {
   display: block;
 }
+.new-block.\+util-3 .new-block__part-10 {
+  display: block;
+}
