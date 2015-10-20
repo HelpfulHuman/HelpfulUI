@@ -29,7 +29,7 @@ gulp.task('build', ['bower:styles']);
  * Automatically run tasks on file change.
  */
 gulp.task('watch', ['build'], function () {
-  gulp.watch('./**/*.styl', ['styles']).on('change', browsersync.reload);
+  gulp.watch('./**/*.styl', ['bower:styles']).on('change', browsersync.reload);
   gulp.watch('./index.html', []).on('change', browsersync.reload);
 });
 

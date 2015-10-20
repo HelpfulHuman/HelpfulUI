@@ -87,6 +87,13 @@ body
   line-height: $hui.base.line-height
   color: $hui.colors.body-text
   background: $hui.colors.body-bg
+  -webkit-font-smoothing: $hui.font-smoothing
+  if $hui.font-smoothing is antialiased
+    -moz-osx-font-smoothing: grayscale
+  else
+    -moz-osx-font-smoothing: auto
+  font-smoothing: $hui.font-smoothing
+
 
 /**
  * We're going to apply some sensible defaults for common typographic
