@@ -7,7 +7,7 @@
  * -------------------------------------------------------------------
  */
 
-$hui = deepMerge({
+$hui = merge({
 
   /**
    * ENFORCE HEIGHT
@@ -53,56 +53,6 @@ $hui = deepMerge({
    * These are the base settings used for calculating font sizes and
    * defining the rules for tags like <html> and <body>.
    */
-  base: {
-    font-size: 16px
-    line-height: 1.45
-    font-weight: normal
-    font-style: normal
-    content-margin: 1.5em
-  }
-
-  /**
-   * FONTS
-   *
-   * These are the fonts which will be used by the other modules.
-   */
-  fonts: {
-    primary: unquote("'Helvetica Neue', Arial, sans-serif")
-    headings: inherit
-    code: unquote("'Monaco', Courier New, monospace")
-  }
-
-  /**
-   * COLORS
-   *
-   * Contains color codes that can be used by Zero, future plugins or
-   * your own components.
-   */
-  colors: {
-    body-text: #454545
-    body-bg: #fff
-    headings: #333
-    links: #3498DB
-  }
-
-  /**
-   * CONTROLS
-   *
-   * These are settings shared across all form controls to help enforce
-   * a uniform style.
-   */
-  controls: {
-    padding: 0.75em 1em
-    font-family: inherit
-    font-size: inherit
-    height: 2.5em
-    line-height: inherit
-    color: inherit
-    border-color: #ccc
-    border-width: 1px
-    border-radius: 3px
-    hide-overflow: true
-  }
-
+  base-font-size: 16px
 
 }, $hui)

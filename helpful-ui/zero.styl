@@ -60,7 +60,7 @@ template
  * "jumping" window positions, then we'll take care of that here as well.
  */
 html
-  font-size: px($hui.base.font-size)
+  font-size: $hui.base-font-size
   -webkit-tap-highlight-color: alpha(#fff, 100%)
   -ms-text-size-adjust: 100%
   -webkit-text-size-adjust: 100%
@@ -81,12 +81,9 @@ if $hui.enforce-height
  */
 body
   font-size: 100% // reset to <html>
-  font-family: $hui.fonts.primary
   font-weight: normal
   font-style: normal
-  line-height: $hui.base.line-height
-  color: $hui.colors.body-text
-  background: $hui.colors.body-bg
+  line-height: 1.45
   -webkit-font-smoothing: $hui.font-smoothing
   if $hui.font-smoothing is antialiased
     -moz-osx-font-smoothing: grayscale
@@ -104,12 +101,11 @@ body
 // Headings
 h1, h2, h3, h4, h5, h6
   margin-top: 0
-  margin-bottom: rem($hui.base.content-margin)
-  font-family: $hui.fonts.headings
+  margin-bottom: 1.5rem
 
 // Standard content blocks
 p, ul, ol, dl, blockquote, figure, pre, hr
-  margin-top: $hui.base.content-margin
+  margin-top: 1.5em
   margin-bottom: @margin-top
 
 ul, ol
@@ -164,21 +160,19 @@ abbr[title]
   border-bottom: dotted 1px
 
 address
-  margin-bottom: em($hui.base.content-margin)
   font-style: normal
   line-height: inherit
 
 // Code
 pre, code, kbd, samp
   font-size: 1em
-  font-family: $hui.fonts.code
+  font-family: 'Monaco', Courier New, monospace
 
 pre
   overflow: auto
 
 // Links
 a
-  color: $hui.colors.links
   background: transparent
 
   &:hover,
@@ -230,11 +224,11 @@ select,
 button,
 textarea
   margin: 0
-  font-family: $hui.controls.font-family
-  font-size: $hui.controls.font-size
-  color: $hui.controls.color
-  background: $hui.controls.background
-  border-radius: $hui.controls.border-radius
+  font-family: inherit
+  font-size: inherit
+  color: inherit
+  background: #fff
+  border-radius: 0
   box-sizing: inherit
   text-transform: none
 
@@ -249,33 +243,28 @@ select
 input,
 select,
 textarea
-  border-style: solid
-  border-width: $hui.controls.border-width
-  border-color: $hui.controls.border-color
+  border: solid 1px #ccc
   -webkit-appearance: none
 
 input,
 select,
 button
-  padding: 0 ($hui.controls.padding[1] or $hui.controls.padding[0])
-  height: $hui.controls.height
+  padding: 0 1em
+  height: 2.5em
   vertical-align: middle
 
 textarea
-  line-height: $hui.controls.line-height
-  padding: $hui.controls.padding
+  line-height: inherit
+  padding: 1em
   resize: vertical
 
 button,
 input[type="button"]
-  line-height: $hui.controls.height
+  line-height: 2.5
   border: 0
-  if $hui.controls.hide-overflow
-    overflow: hidden
-    white-space: nowrap
-    text-overflow: ellipsis
-  else
-    overflow: visible
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
 
 button,
 input[type="button"],
