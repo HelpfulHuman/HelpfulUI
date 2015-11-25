@@ -8,17 +8,6 @@ var fs = require('fs');
 var ui = require('../');
 
 /**
- * Ensure that the plugin loads correctly.
- */
-// describe('plugin', function () {
-//
-//   it('loads without failure', function () {
-//     expect(ui).to.be.a('function');
-//   });
-//
-// });
-
-/**
  * Find all of our test cases and remove the `.styl` extension.
  */
 var cases = glob.sync('**/*.styl', {cwd: 'test/cases/'}).map(function (file) {
