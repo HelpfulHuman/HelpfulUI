@@ -4,13 +4,13 @@
 
 **Helpful UI** is a specification for creating clean and predictable HTML and CSS.  The goal is to set standards that can be used across multiple projects to make it easier for developers to collaborate more effectively.
 
-This project is heavily inspired by standards like [BEM](), [CSStyle](http://csstyle.io) and [SMACSS](https://smacss.com/),as well as, tools like the [nib](http://tj.github.io/nib/) stylus framework.
+This project is heavily inspired by standards like [BEM](), [CSStyle](http://csstyle.io) and [SMACSS](https://smacss.com/), as well as, tools like the [nib](http://tj.github.io/nib/) stylus framework.
 
-This library offers a variety of functions and mixins that focus on serving the goals of the specification.  If you're looking for a more feature-rich framework that expands on this library and specification, then you'll want to check out [Helpful UI's Elements](https://github.com/HelpfulHuman/HelpfulUI-Elements).
+This library offers a small, focused collection of functions that serve the goals of the specification.  If you're looking for a framework that expands on this library, then you'll want to check out [Helpful UI's Elements](https://github.com/HelpfulHuman/HelpfulUI-Elements) package.
 
 ## Getting Started
 
-Helpful UI is built in a very similar fashion to [nib](https://github.com/tj/nib).  You can even use the together if you like.  There are multiple ways you can use this library which we have listed below.
+Helpful UI is built in a very similar fashion to [nib](https://github.com/tj/nib).  You can even use the two together if you like.  There are multiple ways you can use this library, which we have listed below.
 
 ### Express / Connect
 
@@ -91,10 +91,9 @@ $hui = {
 Helpful UI comes with its own normalization/reset sheet that is generated specifically for your project.  We call it "Zero".  You just need to `@import` it.
 
 ```stylus
+@import 'helpful-ui'
 @import 'helpful-ui/zero'
 ```
-
-_Note: Because "zero" relies on Helpful UI's core files, you do need to manually import Helpful UI beforehand._
 
 ### Elements [Coming Soon]
 
