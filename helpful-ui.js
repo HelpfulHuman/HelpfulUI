@@ -1,5 +1,6 @@
 var stylus = require('stylus');
 var path   = require('path');
+var elements = require('helpful-ui-elements');
 var nodes  = stylus.nodes;
 var utils  = stylus.utils;
 
@@ -12,6 +13,7 @@ var utils  = stylus.utils;
 function plugin () {
   return function (style) {
     style.include(__dirname);
+    style.include(elements.path);
   }
 }
 

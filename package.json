@@ -1,11 +1,12 @@
 {
   "name": "helpful-ui",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Open standard for writing stylesheets and CSS/Stylus framework.",
   "main": "./helpful-ui.js",
   "dependencies": {
     "lodash": "^3.10.1",
-    "stylus": "^0.52.4"
+    "stylus": "^0.52.4",
+    "helpful-ui-elements": "^0.1.0"
   },
   "devDependencies": {
     "browser-sync": "^2.9.1",
